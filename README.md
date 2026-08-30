@@ -14,9 +14,43 @@ assets/css/site.css   All styles
 assets/js/data.js     ← everything you will ever want to edit lives here
 assets/js/site.js     Behaviour (open/closed status, menu rendering, search, filters)
 assets/img/*.svg      Built-in food illustrations
+assets/fonts/         Self-hosted Newsreader, Archivo and IBM Plex Mono
 assets/photos/        Drop real photography here (see its README)
 tools/build-preview.py  Bundles the whole site into one shareable HTML file
+tools/fetch-fonts.py    Re-downloads the fonts from Google Fonts
 ```
+
+## Design system
+
+| | |
+|---|---|
+| Ground | Deep jade `#0E2A20`, with `#08201A` for the darkest panels |
+| Paper | Warm bone `#F2EDE1` |
+| Accent | Chilli `#C43D20` for buttons, `#9E2F16` for prices on light grounds |
+| Marks | Gold `#E0B45C` for eyebrows, spice art and figures on jade |
+| Display | Newsreader, including its italic for accents and Vietnamese names |
+| Body | Archivo |
+| Data | IBM Plex Mono for dish codes, prices, hours and labels |
+
+Every colour lives as a token at the top of `site.css`. Change a token and
+it moves everywhere, including the illustrations' backdrops.
+
+Text meets WCAG AA. Two colours are deliberately darker than they look like
+they should be: `--chilli-ink` for prices and `--chilli-btn` for button
+labels. The brighter chilli fails AA at the small sizes those use.
+
+### Fonts
+
+The three families are **self-hosted** in `assets/fonts/`, not loaded from
+Google. That is not only about speed. The display face has to carry Vietnamese
+diacritics, since the menu sets category names like *Món Nước Đặc Biệt*, and
+several otherwise excellent faces (Instrument Serif and Bodoni Moda among them)
+ship no Vietnamese subset at all. Newsreader does. Each family is served in
+latin, latin-ext and vietnamese subsets, and `unicode-range` means a browser
+only downloads the ones a visitor actually needs.
+
+To change or refresh them, edit the URL in `tools/fetch-fonts.py` and run it.
+Check any candidate for a `vietnamese` subset first.
 
 ## Editing the site
 

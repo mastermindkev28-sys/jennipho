@@ -22,6 +22,26 @@ os.chdir(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 read = lambda p: io.open(p, encoding="utf-8").read()
 
+def inline_fonts():
+    """Fold assets/fonts/fonts.css into the bundle with every woff2
+    embedded as a data URI. The artifact is served from its own origin
+    with no asset folder, so a relative font URL would 404 and the page
+    would silently fall back to Georgia."""
+    css = read("assets/fonts/fonts.css")
+    out, n = [], 0
+    for line in css.splitlines():
+        m = re.search(r"url\('([^']+\.woff2)'\)", line)
+        if m:
+            path = os.path.join("assets/fonts", m.group(1))
+            b64 = base64.b64encode(io.open(path, "rb").read()).decode("ascii")
+            line = line.replace(m.group(1),
+                                "data:font/woff2;base64," + b64)
+            n += 1
+        out.append(line)
+    print("inlined %d font files" % n)
+    return "\n".join(out)
+
+
 index_html = read("index.html")
 menu_html  = read("menu.html")
 css        = read("assets/css/site.css")
@@ -92,12 +112,13 @@ assert "assets/img" not in body, "stray asset path in markup"
 
 # ---- 5. strip external <script src> tags (inlined below) -------------
 body = re.sub(r'\s*<script src="assets/js/[^"]+"></script>', "", body)
+body = body.replace('<link rel="stylesheet" href="assets/fonts/fonts.css">', "")
 
 # ---- 6. assemble -----------------------------------------------------
 page = u"""<title>Jenni Pho</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+%s
+</style>
 <style>
 %s
 </style>
@@ -111,7 +132,7 @@ page = u"""<title>Jenni Pho</title>
 <script>
 %s
 </script>
-""" % (css, body, art_js, data_js, site_js)
+""" % (inline_fonts(), css, body, art_js, data_js, site_js)
 
 io.open(OUT, "w", encoding="utf-8").write(page)
 print("wrote %s  (%.0f KB)" % (OUT, os.path.getsize(OUT) / 1024.0))
