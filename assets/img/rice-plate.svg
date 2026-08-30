@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Illustration of a broken rice plate with charbroiled pork chop, fried egg and pickles">
+  <defs>
+    <linearGradient id="p3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1E1814"/><stop offset="1" stop-color="#0C0B0A"/>
+    </linearGradient>
+    <radialGradient id="g3" cx="50%" cy="45%" r="55%">
+      <stop offset="0" stop-color="#DFA13B" stop-opacity=".26"/><stop offset="1" stop-color="#DFA13B" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#p3)"/><rect width="800" height="600" fill="url(#g3)"/>
+
+  <ellipse cx="400" cy="330" rx="292" ry="132" fill="#FAF6EE"/>
+  <ellipse cx="400" cy="330" rx="292" ry="132" fill="none" stroke="#DCCFB8" stroke-width="4"/>
+
+  <!-- rice mound -->
+  <ellipse cx="300" cy="340" rx="118" ry="66" fill="#FFFDF8"/>
+  <g fill="#F0E8D8">
+    <ellipse cx="268" cy="326" rx="12" ry="7"/><ellipse cx="304" cy="316" rx="12" ry="7"/>
+    <ellipse cx="336" cy="332" rx="12" ry="7"/><ellipse cx="288" cy="352" rx="12" ry="7"/>
+    <ellipse cx="326" cy="358" rx="12" ry="7"/>
+  </g>
+
+  <!-- pork chop -->
+  <path d="M446 292c58-22 128-10 146 26 18 36-24 76-92 80-62 4-104-22-104-54 0-24 18-42 50-52Z" fill="#8E4A22"/>
+  <path d="M462 306c48-16 106-8 120 20 14 28-20 60-76 62-52 2-86-18-86-44 0-20 16-30 42-38Z" fill="#A85C2C"/>
+  <g stroke="#5C2E12" stroke-width="7" stroke-linecap="round" opacity=".6">
+    <path d="M462 326h108"/><path d="M456 350h116"/><path d="M472 374h92"/>
+  </g>
+
+  <!-- fried egg -->
+  <ellipse cx="330" cy="418" rx="72" ry="42" fill="#FFFDF8"/>
+  <circle cx="330" cy="414" r="26" fill="#E8A93B"/>
+  <circle cx="322" cy="406" r="9" fill="#F4C86C"/>
+
+  <!-- pickles -->
+  <g>
+    <rect x="200" y="256" width="60" height="12" rx="6" fill="#E8944A" transform="rotate(-14 200 256)"/>
+    <rect x="222" y="272" width="60" height="12" rx="6" fill="#F0E4A4" transform="rotate(-6 222 272)"/>
+  </g>
+  <!-- scallion oil -->
+  <g fill="#5E7F60"><circle cx="520" cy="290" r="8"/><circle cx="546" cy="300" r="6"/><circle cx="500" cy="278" r="5"/></g>
+</svg>

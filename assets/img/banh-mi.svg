@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Illustration of a banh mi sandwich with pickled vegetables, cilantro and jalapeno">
+  <defs>
+    <linearGradient id="p" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F6EEDD"/><stop offset="1" stop-color="#E4D6BB"/>
+    </linearGradient>
+    <linearGradient id="crust" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#E0A857"/><stop offset="1" stop-color="#B87B34"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#p)"/>
+  <circle cx="640" cy="120" r="160" fill="#DFA13B" opacity=".16"/>
+  <circle cx="130" cy="510" r="140" fill="#C0402A" opacity=".08"/>
+
+  <g transform="rotate(-11 400 300)">
+    <!-- bottom half -->
+    <path d="M150 322h500c26 0 46 18 46 40s-20 40-46 40H150c-26 0-46-18-46-40s20-40 46-40Z" fill="url(#crust)"/>
+    <!-- fillings -->
+    <g>
+      <rect x="150" y="286" width="490" height="26" rx="13" fill="#F3E9D4"/>
+      <g fill="#C0402A">
+        <rect x="184" y="268" width="112" height="24" rx="12"/>
+        <rect x="330" y="272" width="128" height="22" rx="11"/>
+        <rect x="494" y="266" width="106" height="26" rx="13"/>
+      </g>
+      <g fill="#E8944A">
+        <rect x="206" y="248" width="150" height="15" rx="7.5"/>
+        <rect x="392" y="252" width="170" height="15" rx="7.5"/>
+      </g>
+      <g fill="#F0E4A4">
+        <rect x="252" y="234" width="140" height="13" rx="6.5"/>
+        <rect x="430" y="238" width="150" height="13" rx="6.5"/>
+      </g>
+      <g fill="#5E7F60">
+        <ellipse cx="250" cy="230" rx="30" ry="14"/>
+        <ellipse cx="410" cy="222" rx="34" ry="15"/>
+        <ellipse cx="566" cy="230" rx="28" ry="13"/>
+      </g>
+      <g fill="#4E7B3F">
+        <ellipse cx="320" cy="238" rx="15" ry="7" transform="rotate(-24 320 238)"/>
+        <ellipse cx="492" cy="242" rx="15" ry="7" transform="rotate(20 492 242)"/>
+      </g>
+    </g>
+    <!-- top half -->
+    <path d="M150 178h500c30 0 54 22 54 46s-24 44-54 44H150c-30 0-54-20-54-44s24-46 54-46Z" fill="url(#crust)"/>
+    <g stroke="#8F5C22" stroke-width="6" stroke-linecap="round" opacity=".5">
+      <path d="M228 196c14 14 14 34 0 48"/><path d="M368 194c14 14 14 36 0 50"/><path d="M508 196c14 14 14 34 0 48"/>
+    </g>
+  </g>
+</svg>

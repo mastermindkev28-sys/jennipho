@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Illustration of a bowl of spicy bun bo hue with chili oil and lemongrass">
+  <defs>
+    <linearGradient id="p5" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#231411"/><stop offset="1" stop-color="#0C0B0A"/>
+    </linearGradient>
+    <radialGradient id="g5" cx="50%" cy="44%" r="54%">
+      <stop offset="0" stop-color="#C0402A" stop-opacity=".4"/><stop offset="1" stop-color="#C0402A" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="spicy" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#D2532C"/><stop offset="1" stop-color="#9E2F16"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#p5)"/><rect width="800" height="600" fill="url(#g5)"/>
+
+  <g fill="none" stroke="#F6F1E7" stroke-opacity=".24" stroke-width="7" stroke-linecap="round">
+    <path d="M348 172c-22-26 18-42-4-70"/><path d="M452 172c-22-26 18-42-4-70"/>
+  </g>
+
+  <ellipse cx="400" cy="318" rx="216" ry="54" fill="#0C0B0A" opacity=".5"/>
+  <path d="M184 314h432c0 110-97 180-216 180S184 424 184 314Z" fill="#F3EADA"/>
+  <ellipse cx="400" cy="314" rx="216" ry="52" fill="url(#spicy)"/>
+  <ellipse cx="400" cy="314" rx="216" ry="52" fill="none" stroke="#FAF6EE" stroke-opacity=".45" stroke-width="5"/>
+
+  <!-- chili oil slick -->
+  <g fill="#F26A34" opacity=".8">
+    <ellipse cx="330" cy="306" rx="34" ry="12"/><ellipse cx="452" cy="318" rx="28" ry="10"/>
+    <ellipse cx="392" cy="330" rx="20" ry="8"/>
+  </g>
+
+  <!-- thick noodles -->
+  <g stroke="#F7EEDC" stroke-width="11" stroke-linecap="round" fill="none">
+    <path d="M296 300c30-20 68-20 98 0"/><path d="M420 306c28-18 64-18 92 0"/>
+  </g>
+
+  <!-- pork hock -->
+  <ellipse cx="352" cy="292" rx="56" ry="30" fill="#C98A6A"/>
+  <ellipse cx="352" cy="288" rx="36" ry="17" fill="#E5BCA1"/>
+  <!-- beef slice -->
+  <ellipse cx="470" cy="298" rx="46" ry="18" transform="rotate(9 470 298)" fill="#8E3220"/>
+
+  <!-- lemongrass + herbs -->
+  <g stroke="#5E7F60" stroke-width="8" stroke-linecap="round">
+    <path d="M254 288c26-14 52-16 76-6"/><path d="M552 292c-24-14-50-16-72-6"/>
+  </g>
+  <circle cx="512" cy="328" r="11" fill="#C0402A"/>
+  <circle cx="284" cy="330" r="13" fill="#9CB84E"/>
+</svg>
