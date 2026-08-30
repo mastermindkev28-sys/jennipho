@@ -15,6 +15,7 @@ assets/js/data.js     ← everything you will ever want to edit lives here
 assets/js/site.js     Behaviour (open/closed status, menu rendering, search, filters)
 assets/img/*.svg      Built-in food illustrations
 assets/photos/        Drop real photography here (see its README)
+tools/build-preview.py  Bundles the whole site into one shareable HTML file
 ```
 
 ## Editing the site
@@ -126,6 +127,21 @@ is already here.
 python3 -m http.server 8000
 # then open http://localhost:8000
 ```
+
+### One-file build
+
+To hand the site to someone as a single file — a preview link, an email
+attachment, a page you can open straight off a USB stick:
+
+```sh
+python3 tools/build-preview.py
+```
+
+That writes `jenni-pho-preview.html` in the repo root: both pages combined into
+one document with the CSS, the JavaScript and all ten illustrations inlined. It
+needs no server and no asset folder. Re-run it after editing `data.js` to
+refresh the preview. Source files are never modified, and the output is
+gitignored.
 
 ## What is built in
 
