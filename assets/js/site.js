@@ -1,5 +1,5 @@
 /* ============================================================
-   Jenni Pho — site behaviour
+   Jenni Pho site behaviour
    Vanilla JS, no dependencies, no build step.
    ============================================================ */
 (function () {
@@ -29,7 +29,7 @@
     const art_src = `assets/img/${art}.svg`;
     const photo = photoFor(slot);
     const src = photo ? `assets/photos/${photo}` : art_src;
-    // The illustrations are a couple of KB each — lazy-loading them only
+    // The illustrations are a couple of KB each. Lazy-loading them only
     // buys pop-in. Real photographs are worth deferring.
     return (
       `<img src="${src}" alt="${esc(alt || "")}" decoding="async"` +
@@ -389,7 +389,7 @@
       this.host.innerHTML =
         html ||
         `<div class="menu-empty"><h3>Nothing matched that.</h3>` +
-        `<p>Try “pho”, “banh mi”, “vegetarian” — or clear the filters.</p></div>`;
+        `<p>Try “pho”, “banh mi” or “vegetarian”, or clear the filters.</p></div>`;
 
       if (this.count) {
         const total = MENU.reduce((n, c) => n + c.items.length, 0);
@@ -481,6 +481,161 @@
     );
   }
 
+  /* ---------------- Steam ----------------
+     Particles rising off the bowl. The markup keeps a three-path SVG
+     wisp as the no-JS fallback; this hides it and takes over only once
+     the canvas is actually running, so the bowl is never left bare.
+     Skipped entirely when the visitor asks for reduced motion, and
+     paused whenever the hero is scrolled out of view. */
+  function initSteam() {
+    const cv = $("[data-steam]");
+    if (!cv || !cv.getContext) return;
+
+    const calm = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (calm.matches) return;
+
+    const ctx = cv.getContext("2d");
+    if (!ctx) return;
+
+    document.body.classList.add("has-canvas-steam");
+
+    let w = 0, h = 0, dpr = 1, raf = 0, running = false;
+
+    function size() {
+      const r = cv.getBoundingClientRect();
+      if (!r.width || !r.height) return false;
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      w = r.width; h = r.height;
+      cv.width  = Math.round(w * dpr);
+      cv.height = Math.round(h * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      return true;
+    }
+
+    const COUNT = 26;
+    const puffs = [];
+
+    function seed(p, initial) {
+      p.x = w * (0.5 + (Math.random() - 0.5) * 0.46);
+      p.y = h * (0.96 + Math.random() * 0.06);
+      p.r = h * (0.035 + Math.random() * 0.042);
+      p.span = 3.6 + Math.random() * 3.0;          // seconds
+      // Stagger the first cycle across the whole span, otherwise every
+      // puff pulses in unison and the bowl looks like it is breathing.
+      p.life = initial ? Math.random() * p.span : 0;
+      p.drift = (Math.random() - 0.5) * 0.5;
+      p.wobble = 0.7 + Math.random() * 1.5;
+      p.phase = Math.random() * Math.PI * 2;
+      p.peak = 0.10 + Math.random() * 0.08;        // max alpha
+    }
+
+    for (let i = 0; i < COUNT; i++) { puffs.push({}); seed(puffs[i], true); }
+
+    let last = 0;
+    function frame(t) {
+      if (!running) return;
+      const dt = Math.min((t - last) / 1000 || 0, 0.05);
+      last = t;
+
+      ctx.clearRect(0, 0, w, h);
+
+      for (const p of puffs) {
+        p.life += dt;
+        const k = p.life / p.span;
+        if (k >= 1) { seed(p, false); continue; }
+
+        // Rise, widen and fade. The travel is kept under the canvas
+        // height so puffs never spend their brightest moment offscreen.
+        const y = p.y - k * h * 0.78;
+        const x = p.x + Math.sin(p.phase + p.life * p.wobble) * h * 0.05
+                      + p.drift * k * h * 0.3;
+        const r = p.r * (1 + k * 1.7);
+        const a = p.peak * Math.sin(Math.min(k, 1) * Math.PI);
+        if (a <= 0.002) continue;
+
+        const g = ctx.createRadialGradient(x, y, 0, x, y, r);
+        g.addColorStop(0,    "rgba(255, 250, 242, " + a.toFixed(4) + ")");
+        g.addColorStop(0.45, "rgba(252, 242, 224, " + (a * 0.62).toFixed(4) + ")");
+        g.addColorStop(1,    "rgba(250, 238, 216, 0)");
+        ctx.fillStyle = g;
+        ctx.beginPath();
+        ctx.arc(x, y, r, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      raf = requestAnimationFrame(frame);
+    }
+
+    function start() {
+      if (running || !size()) return;
+      running = true; last = performance.now();
+      raf = requestAnimationFrame(frame);
+    }
+    function stop() {
+      running = false;
+      if (raf) cancelAnimationFrame(raf);
+      raf = 0;
+    }
+
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(
+        (es) => { es[0] && es[0].isIntersecting ? start() : stop(); },
+        { threshold: 0 }
+      ).observe(cv);
+    } else {
+      start();
+    }
+
+    let rt;
+    window.addEventListener("resize", () => {
+      clearTimeout(rt);
+      rt = setTimeout(() => { if (running) size(); }, 180);
+    });
+
+    document.addEventListener("visibilitychange", () => {
+      document.hidden ? stop() : start();
+    });
+
+    // Honour a mid-session change to the motion preference.
+    const onCalm = (e) => {
+      if (!e.matches) return;
+      stop();
+      ctx.clearRect(0, 0, w, h);
+      document.body.classList.remove("has-canvas-steam");
+    };
+    calm.addEventListener ? calm.addEventListener("change", onCalm)
+                          : calm.addListener(onCalm);
+  }
+
+  /* ---------------- Count-up ----------------
+     The years-on-Rainbow badge ticks up the first time it is seen. */
+  function initCountUp() {
+    const el = $("[data-years]");
+    if (!el || !("IntersectionObserver" in window)) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    const target = parseInt(el.textContent, 10);
+    if (!target) return;
+
+    const io = new IntersectionObserver((entries) => {
+      if (!entries[0] || !entries[0].isIntersecting) return;
+      io.disconnect();
+
+      const dur = 1100;
+      const t0 = performance.now();
+      el.textContent = "0";
+      (function tick(now) {
+        const k = Math.min((now - t0) / dur, 1);
+        // ease-out cubic
+        el.textContent = Math.round(target * (1 - Math.pow(1 - k, 3)));
+        if (k < 1) requestAnimationFrame(tick);
+        else el.textContent = target;
+      })(t0);
+    }, { threshold: 0.5 });
+
+    io.observe(el);
+  }
+
   /* ---------------- Boot ---------------- */
   function boot() {
     fillBusiness();
@@ -495,6 +650,8 @@
     renderOrdering();
     MenuPage.init();
     initReveal();
+    initSteam();
+    initCountUp();
     setInterval(renderStatus, 60000);
   }
 

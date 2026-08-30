@@ -295,7 +295,7 @@ const REVIEWS = [
     source: "Google",
     headline: "A very nostalgic taste",
     quote:
-      "Been going here since they started business \u2014 their pho has a very nostalgic taste. The pho was great and was served very quickly. The staff were very nice and friendly. Parking is no problem and plentiful.",
+      "Been going here since they started business. Their pho has a very nostalgic taste. The pho was great and was served very quickly. The staff were very nice and friendly. Parking is no problem and plentiful.",
     url: REVIEWS_URL,
   },
   {
@@ -306,7 +306,7 @@ const REVIEWS = [
     source: "Google",
     headline: "The pho was flavorful",
     quote:
-      "It's a cute good size restaurant, not too small not too big. The pho was flavorful \u2014 I created my own. Price was on point in comparison to most places, a good amount. The staff was welcoming and checked up often, even with small thoughtful questions.",
+      "It's a cute good size restaurant, not too small not too big. The pho was flavorful. I created my own. Price was on point in comparison to most places, a good amount. The staff was welcoming and checked up often, even with small thoughtful questions.",
     url: REVIEWS_URL,
   },
   {

@@ -1,4 +1,4 @@
-# Jenni Pho — website
+# Jenni Pho website
 
 A fast, static marketing site for **Jenni Pho**, the Vietnamese restaurant at
 7855 S Rainbow Blvd, Las Vegas NV 89139.
@@ -7,7 +7,7 @@ No framework, no build step, no dependencies. Two HTML files, one stylesheet,
 one script, one data file. Open `index.html` in a browser and it works.
 
 ```
-index.html            Home — hero, story, signatures, reviews, gallery, ordering, hours
+index.html            Home: hero, story, broth, signatures, reviews, ordering, hours
 COPY-DECK.md          All site copy, section by section, for a website builder
 menu.html             Full menu, searchable and filterable, with prices
 assets/css/site.css   All styles
@@ -33,11 +33,11 @@ in the structured data Google reads. You do not need to touch any HTML.
 | Hours                   | `BUSINESS.hours` (minutes from midnight) + `hoursLabel` |
 | Phone / address         | `BUSINESS` in `data.js`                               |
 | Delivery app links      | `ORDERING` in `data.js`                               |
-| Review quotes           | `REVIEWS` in `data.js` — read the note below first     |
+| Review quotes           | `REVIEWS` in `data.js`, read the note below first      |
 | Add a photo             | `assets/photos/README.md`                             |
 
 Adding a dish is one line in the right category's `items` array. Adding a whole
-category is one object in `MENU` — the nav rail, the search, the filters and
+category is one object in `MENU`. The nav rail, the search, the filters and
 the structured data all pick it up automatically.
 
 ### Dish tags
@@ -46,7 +46,7 @@ the structured data all pick it up automatically.
 tagged `top` is eligible for the "Four bowls worth the drive" cards on the home
 page; which four appear is set by the `wanted` list in `site.js`.
 
-## Reviews — please read
+## Reviews, please read
 
 The six review cards are **real, published Google reviews**. Each card shows the
 reviewer's name, their Google Local Guide credential (review and photo counts)
@@ -55,7 +55,7 @@ anonymous row of stars. Nothing on the page is invented.
 
 How the quotes were handled:
 
-- Each card's headline is a **verbatim fragment of that same review** — never a
+- Each card's headline is a **verbatim fragment of that same review**, never a
   phrase written for the site.
 - Quotes are trimmed to the sentences Google displayed before "… More".
 - Obvious typos and sentence casing were corrected. Nothing else was changed.
@@ -64,7 +64,7 @@ How the quotes were handled:
 source material, and the site does not claim an aggregate Google rating it
 cannot verify. To show stars on a card, add `rating: 5` to that review in
 `data.js` and they render automatically. The `aggregateRating` field is
-deliberately absent from the JSON-LD — publishing a rating you cannot
+deliberately absent from the JSON-LD, because publishing a rating you cannot
 substantiate is a structured-data violation Google penalises.
 
 The panel beside the heading cites **687 reviews on Yelp**, which is verifiable
@@ -78,7 +78,7 @@ FTC's rule on fake consumer reviews.
 
 ## Hours
 
-Set to **10:00 AM – 9:30 PM daily**. Sources disagreed slightly — Yelp and
+Set to **10:00 AM – 9:30 PM daily**. Sources disagreed slightly. Yelp and
 Google list 10:00–21:30, while one local directory lists 10:00–22:00. Please
 confirm the correct closing time and update `BUSINESS.hours` and
 `BUSINESS.hoursLabel` in `data.js`, plus the `openingHoursSpecification` block
@@ -91,16 +91,16 @@ for the restaurant no matter where the visitor is.
 
 - [ ] Confirm closing time (see above).
 - [ ] Confirm every price against the current in-house menu. Prices here were
-      compiled from published menu listings, not from your POS — the delivery
+      compiled from published menu listings, not from your POS. The delivery
       apps charge more than these, which is why the site says so.
 - [ ] Confirm the soft-serve dessert price (currently "Ask your server").
 - [ ] Replace `https://jennipho.com/` in the `<link rel="canonical">`, the
       `og:` tags and the JSON-LD of both pages with your real domain.
 - [ ] Update `sitemap.xml` and `robots.txt` with the same domain.
-- [ ] Add real photos (`assets/photos/README.md`) — the biggest single upgrade
+- [ ] Add real photos (`assets/photos/README.md`), the biggest single upgrade
       left. Use photos the restaurant owns; the images on the Google listing
       belong to the reviewers who uploaded them.
-- [x] Swap in Google reviews — done, six of them (see above).
+- [x] Swap in Google reviews. Done, six of them (see above).
 - [ ] Optional: add each review's real star count (`rating: 5`) from your
       Google Business Profile.
 - [ ] Claim/refresh the Google Business Profile and set the website field to
@@ -111,15 +111,15 @@ for the restaurant no matter where the visitor is.
 
 It is a static site, so anything that serves files will do.
 
-**Netlify** — drag the folder onto app.netlify.com, or connect the repo.
+**Netlify.** Drag the folder onto app.netlify.com, or connect the repo.
 `netlify.toml` is already here.
 
-**Vercel** — `vercel` from this directory, or connect the repo. `vercel.json`
+**Vercel.** Run `vercel` from this directory, or connect the repo. `vercel.json`
 is already here.
 
-**GitHub Pages** — Settings → Pages → deploy from this branch, root folder.
+**GitHub Pages.** Settings → Pages → deploy from this branch, root folder.
 
-**Any host** — upload the files. There is nothing to compile.
+**Any host.** Upload the files. There is nothing to compile.
 
 ### Local preview
 
@@ -130,7 +130,7 @@ python3 -m http.server 8000
 
 ### One-file build
 
-To hand the site to someone as a single file — a preview link, an email
+To hand the site to someone as a single file, such as a preview link, an email
 attachment, a page you can open straight off a USB stick:
 
 ```sh
@@ -154,7 +154,7 @@ gitignored.
 - Responsive from 320px up, tested at 390px and 1440px
 - Keyboard accessible, with skip link, focus rings and semantic landmarks
 - Respects `prefers-reduced-motion`
-- A print stylesheet — the menu page prints as a clean paper menu
+- A print stylesheet, so the menu page prints as a clean paper menu
 - No cookies, no trackers, no third-party scripts
 
 ## Performance

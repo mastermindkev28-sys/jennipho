@@ -1,5 +1,5 @@
 /* ============================================================
-   Jenni Pho — site styles
+   Jenni Pho site styles
    Hand-written. No framework, no build step.
    ============================================================ */
 
@@ -16,6 +16,7 @@
   --amber:      #DFA13B;
   --amber-deep: #B87B22;
   --chili:      #C0402A;
+  --chili-soft: #E0674E;
   --herb:       #5E7F60;
 
   --text:       #171310;
@@ -661,7 +662,7 @@ body.nav-open .nav-toggle span::after  { transform: translateY(-5.5px) rotate(-4
 }
 .menu-cat__art > * { width: 100%; height: 100%; object-fit: cover; }
 
-/* the list — classic dotted-leader menu typography */
+/* the list: classic dotted-leader menu typography */
 .menu-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
@@ -1096,4 +1097,114 @@ mark.hl { background: rgba(223, 161, 59, 0.42); color: inherit; border-radius: 2
   .section--dark { background: #fff; color: #000; }
   .menu-cat { break-inside: avoid; }
   .menu-row { break-inside: avoid; }
+}
+
+/* ============================================================
+   Atmosphere and aromatics
+   Added for the visual pass: page-wide grain, canvas steam,
+   the spice row, and the overnight timeline.
+   ============================================================ */
+
+/* ---------- Page-wide grain ----------
+   The hero had its own grain layer; this extends the same tactility
+   over the paper sections, where flat colour reads thinnest. */
+.grain {
+  position: fixed; inset: 0; z-index: 60;
+  pointer-events: none;
+  opacity: 0.035;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23g)'/%3E%3C/svg%3E");
+}
+
+/* ---------- Canvas steam ----------
+   Replaces the three-path SVG wisp with real particles. The SVG stays
+   in the markup as the no-JS fallback and is hidden once canvas takes
+   over, so the bowl is never bare. */
+.steam-canvas {
+  position: absolute; left: 50%; bottom: 46%;
+  transform: translateX(-50%);
+  width: 76%; height: 62%;
+  pointer-events: none;
+  z-index: 3;
+}
+.has-canvas-steam .steam { display: none; }
+
+/* ---------- Star anise mark ---------- */
+.anise {
+  width: 26px; height: 26px; flex: none;
+  color: var(--amber);
+}
+.anise path, .anise circle { fill: none; stroke: currentColor; stroke-width: 1.5; }
+
+/* ---------- Aromatics ---------- */
+.aromatics { background: var(--ink); color: var(--on-dark); position: relative; overflow: hidden; }
+.aromatics::before {
+  content: ""; position: absolute; pointer-events: none;
+  width: 70vmax; height: 70vmax; left: 50%; top: -34vmax;
+  transform: translateX(-50%);
+  background: radial-gradient(circle at center,
+    rgba(223, 161, 59, 0.13) 0%, rgba(192, 64, 42, 0.07) 38%, transparent 68%);
+}
+.aromatics .shell { position: relative; z-index: 1; }
+.aromatics .section-head h2 { color: var(--on-dark); }
+.aromatics .section-head p  { color: var(--on-dark-2); }
+
+.spice-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(168px, 1fr));
+  gap: 1px;
+  margin-top: clamp(34px, 5vw, 54px);
+  background: var(--ink-line);
+  border: 1px solid var(--ink-line);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+}
+.spice {
+  background: var(--ink);
+  padding: 30px 24px 26px;
+  display: flex; flex-direction: column; gap: 12px;
+  transition: background-color 0.45s var(--ease);
+}
+.spice:hover { background: rgba(246, 241, 231, 0.045); }
+.spice__art { width: 54px; height: 54px; color: var(--amber); }
+.spice__art path, .spice__art circle, .spice__art ellipse, .spice__art line {
+  fill: none; stroke: currentColor;
+  stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+.spice:hover .spice__art { color: var(--chili-soft); }
+.spice__name {
+  font-family: var(--display); font-size: 1.1rem; font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.spice__vi {
+  font-size: 12px; letter-spacing: 0.09em; text-transform: uppercase;
+  font-weight: 600; color: var(--amber);
+}
+.spice__note { font-size: 13.6px; line-height: 1.55; color: var(--on-dark-2); margin: 0; }
+
+/* ---------- Overnight timeline ---------- */
+.overnight {
+  margin-top: clamp(40px, 6vw, 64px);
+  padding-top: clamp(32px, 4vw, 44px);
+  border-top: 1px solid var(--ink-line);
+  display: grid; gap: 22px;
+  grid-template-columns: repeat(3, 1fr);
+  position: relative;
+}
+.overnight::before {
+  content: ""; position: absolute; left: 0; right: 0; top: -1px; height: 1px;
+  background: linear-gradient(90deg, var(--amber), rgba(223, 161, 59, 0.05));
+}
+.stage { display: flex; flex-direction: column; gap: 7px; }
+.stage__time {
+  font-family: var(--display); font-size: clamp(1.5rem, 2.6vw, 2rem);
+  color: var(--amber); line-height: 1; letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+.stage__what { font-size: 14.6px; font-weight: 600; }
+.stage__note { font-size: 13.4px; color: var(--on-dark-3); margin: 0; line-height: 1.5; }
+
+@media (max-width: 720px) {
+  .overnight { grid-template-columns: 1fr; gap: 26px; }
 }

@@ -1,7 +1,7 @@
 # Photos
 
 The site ships with hand-drawn illustrations, so it never renders blank or
-broken. Real photography will make it considerably better — here is how to
+broken. Real photography will make it considerably better. Here is how to
 swap it in.
 
 ## How to add a photo
@@ -9,7 +9,7 @@ swap it in.
 1. Save the file into this folder (`assets/photos/`) using the filename below.
 2. Open `assets/js/data.js`, find the `PHOTOS` block near the bottom, and
    uncomment that photo's line.
-3. Reload. That's it — no build step, no other file to touch.
+3. Reload. That is it: no build step, no other file to touch.
 
 Anything you leave commented out keeps using the illustration, so you can add
 photos one at a time.
@@ -34,7 +34,7 @@ the keys `fried-rice` and `dessert` to `PHOTOS` the same way.
 ## Shooting notes
 
 - **Overhead, natural light.** Shoot bowls from directly above near a window.
-  No flash — it flattens the broth and turns the fat cap grey.
+  No flash, because it flattens the broth and turns the fat cap grey.
 - **Steam reads as fresh.** Photograph the bowl the moment it leaves the pass.
 - **Fill the frame.** These crop to fixed aspect ratios; leave a little
   breathing room at the edges so nothing important gets cut.
@@ -45,5 +45,5 @@ the keys `fried-rice` and `dessert` to `PHOTOS` the same way.
 ## Rights
 
 Only use photographs the restaurant owns or has licence to use. Do not copy
-images from Google, Yelp or the delivery apps — those belong to the people who
+images from Google, Yelp or the delivery apps. Those belong to the people who
 uploaded them.

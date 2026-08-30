@@ -1,4 +1,4 @@
-# Jenni Pho — Website Copy Deck
+# Jenni Pho Website Copy Deck
 
 Every block below is the live copy from this site, laid out section by section
 so it can be pasted straight into Squarespace, Wix, Webflow, WordPress or a
@@ -17,7 +17,7 @@ family-owned since 2008 · free lot parking · dine in, takeout, delivery.
 
 ## 1. Hero Section
 
-**Eyebrow:** Opens at 10:00 AM *(live open/closed pill — swaps to "Open now ·
+**Eyebrow:** Opens at 10:00 AM *(live open/closed pill that swaps to "Open now ·
 closes 9:30 PM" during service)*
 
 **H1:**
@@ -41,10 +41,10 @@ closes 9:30 PM" during service)*
 
 **Scrolling marquee:** PHỞ · BÁNH MÌ · CƠM TẤM · BÚN BÒ HUẾ
 
-**Image — hero.jpg (1200 × 1200, square):**
+**Image, hero.jpg (1200 × 1200, square):**
 An overhead shot of the Jenni Pho Special, steam still rising, herb plate and
 lime just inside the frame. Shoot it the second it leaves the pass. This is the
-single most important photo on the site — if you only take one, take this one.
+single most important photo on the site. If you only take one, take this one.
 
 ---
 
@@ -60,8 +60,8 @@ single most important photo on the site — if you only take one, take this one.
 > Most pho recipes get passed down. Jennifer Huynh went and got hers.
 
 **Body:**
-> Over years of trips back to Vietnam she apprenticed under pho stall owners —
-> the ones who had been working the same corner for decades — collecting the
+> Over years of trips back to Vietnam she apprenticed under pho stall owners,
+> the ones who had been working the same corner for decades, collecting the
 > tips and corrections that never make it into a cookbook. How long to char the
 > ginger. When to stop skimming. What the broth should smell like at four in
 > the morning.
@@ -70,16 +70,57 @@ single most important photo on the site — if you only take one, take this one.
 > purpose: you can watch the bowls being built. Nearly two decades later the
 > bones still go in at night, and the first bowls still go out at ten.
 
-**Attribution:** Jennifer Huynh — Owner & chef, Jenni Pho
+**Attribution:** Jennifer Huynh, owner and chef, Jenni Pho
 
-**Image — dining-room.jpg (1000 × 1250, portrait):**
+**Image, dining-room.jpg (1000 × 1250, portrait):**
 The dining room shot from a back corner at lunch, tables occupied, the open
 kitchen visible. Warm and full, not staged and empty. A portrait of Jennifer in
-the kitchen works just as well here and converts better — people trust a face.
+the kitchen works just as well here and converts better, because people trust a face.
 
 ---
 
-## 3. Menu Highlights
+## 3. In the Pot
+
+*A visual section on the dark ground, between the story and the dish
+highlights. Six spice marks drawn as line art, then a three-stage strip on
+what happens overnight.*
+
+**Eyebrow:** In the pot
+
+**H2:**
+> What makes the broth taste like that.
+
+**Body:**
+> Pho broth is beef bones, water and a short list of whole spices, toasted dry
+> until they turn fragrant and then left to work overnight. These six are what
+> you are smelling when the bowl reaches the table.
+
+**The six spices** (Vietnamese name, English name, note):
+
+| Vietnamese | English | Note |
+|---|---|---|
+| Hoa hồi | Star anise | The licorice note you notice first, before you have taken a spoonful. |
+| Quế | Cinnamon | Bark, not powder. It sits underneath everything else and holds the bowl together. |
+| Gừng nướng | Charred ginger | Blackened whole over open flame, then dropped in skin and all. |
+| Hạt ngò | Coriander seed | Citrus and pepper. Toasted in a dry pan until the seeds start to pop. |
+| Thảo quả | Black cardamom | Smoke. It is the reason a good broth tastes older than it is. |
+| Đinh hương | Clove | Used sparingly. One too many and it takes the whole pot with it. |
+
+**The overnight strip:**
+
+| Stage | Heading | Note |
+|---|---|---|
+| Evening | Bones go in | The pot is filled and set on low before the dining room lights go off. |
+| Overnight | Nobody touches it | Hours of low heat, skimmed clean, doing the part that cannot be hurried. |
+| 10:00 AM | First bowls out | Doors open and the first order of the day goes to a table. |
+
+**Images: none needed.** The spice marks are inline SVG line art and scale to
+any size without a photo. If you would rather use photography, six overhead
+shots of the whole spices on a dark surface would drop straight in.
+
+---
+
+## 4. Menu Highlights
 
 **Eyebrow:** What to order
 
@@ -101,27 +142,27 @@ the kitchen works just as well here and converts better — people trust a face.
 
 **Button:** Browse all 60+ dishes
 
-**Images — one per card (1000 × 800 each):**
-- `pho-bowl.jpg` — Oxtail pho, three-quarter angle so the oxtail breaks the
+**Images, one per card (1000 × 800 each):**
+- `pho-bowl.jpg`: Oxtail pho, three-quarter angle so the oxtail breaks the
   surface of the broth. Chopsticks lifting noodles reads as appetite.
-- `bun-bo-hue.jpg` — Bun bo hue overhead. Let the chilli oil slick on top carry
+- `bun-bo-hue.jpg`: Bun bo hue overhead. Let the chilli oil slick on top carry
   the colour; it is the most photogenic bowl on the menu.
-- `banh-mi.jpg` — Banh mi cut on a diagonal, cross-section to camera, so the
+- `banh-mi.jpg`: Banh mi cut on a diagonal, cross-section to camera, so the
   pickled carrot, cilantro and pork layers are all visible.
-- `rice-plate.jpg` — Com tam broken rice plate shot flat, top-down, with the
+- `rice-plate.jpg`: Com tam broken rice plate shot flat, top-down, with the
   charbroiled pork edge caught in the light.
 
 ---
 
-## 4. Full Menu & Pricing
+## 5. Full Menu & Pricing
 
-*67 dishes across 9 categories. These are in-house dine-in and pickup prices —
-the delivery apps add their own service and menu markups, which the site says
+*67 dishes across 9 categories. These are in-house dine-in and pickup prices.
+The delivery apps add their own service and menu markups, which the site says
 out loud on the ordering section.*
 
 *Key: (v) vegetarian · (gf) made with rice noodles · (spicy) spicy*
 
-### Appetizers — Khai Vị
+### Appetizers (Khai Vị)
 
 *Rolled, fried and folded to order. Built to share, gone in minutes.*
 
@@ -137,7 +178,7 @@ out loud on the ordering section.*
 | A8 | **Veggie Fried Egg Rolls** (v) | Crisp vegetable egg rolls with lettuce and herbs. | $9.25 |
 | A9 | **Veggie Tofu Spring Rolls** (v) (gf) | Fresh rolls with tofu and vegetables. | $10.00 |
 
-### Pho — Phở
+### Pho (Phở)
 
 *The broth Jennifer went to Vietnam to learn. Bones and spice, simmered overnight, skimmed clean. Every bowl comes with basil, bean sprouts, lime and jalapeño.*
 
@@ -159,7 +200,7 @@ out loud on the ordering section.*
 | P14 | **Beef Short Rib Pho** (gf) | Braised short rib, slipping off the bone. | $20.00 |
 | P15 | **Intestine Pho** (gf) | For the traditionalists. | $18.50 |
 
-### Specialty Soups — Món Nước Đặc Biệt
+### Specialty Soups (Món Nước Đặc Biệt)
 
 *The bowls beyond pho. Regional, punchy, and worth the detour.*
 
@@ -173,7 +214,7 @@ out loud on the ordering section.*
 | S6 | **Wonton Soup** | Pork and shrimp wontons in clear broth. | $17.00 |
 | S7 | **Wonton Egg Noodle Soup with Shrimp** | Wontons and shrimp over egg noodle. | $20.00 |
 
-### Vermicelli Bowls — Bún
+### Vermicelli Bowls (Bún)
 
 *Cold rice vermicelli, hot grilled protein, herbs, pickles and nuoc cham poured over the top.*
 
@@ -185,7 +226,7 @@ out loud on the ordering section.*
 | B4 | **Grilled Skewer Pork** | Lemongrass pork skewer over vermicelli. | $16.00 |
 | B5 | **Grilled Pork Sausage** | Grilled Vietnamese pork sausage over vermicelli. | $17.00 |
 
-### Rice Plates — Cơm Tấm
+### Rice Plates (Cơm Tấm)
 
 *Broken rice plates. Charbroiled over open flame, served with pickles and nuoc cham.*
 
@@ -201,7 +242,7 @@ out loud on the ordering section.*
 | R8 | **Skewer Pork, Shrimp & Egg Roll** | Pork skewer, grilled shrimp and egg roll. | $19.00 |
 | R9 | **Chicken Wings, Shredded Pork & Fried Egg** | Fried wings with shredded pork and egg. | $20.00 |
 
-### Fried Rice — Cơm Chiên
+### Fried Rice (Cơm Chiên)
 
 *Wok-fired, egg and scallion, high heat.*
 
@@ -212,7 +253,7 @@ out loud on the ordering section.*
 | F3 | **Shrimp Fried Rice** | Shrimp, egg and scallion. | $18.00 |
 | F4 | **Combination Fried Rice** | Chicken, shrimp and pork together. | $19.00 |
 
-### Banh Mi — Bánh Mì
+### Banh Mi (Bánh Mì)
 
 *Crackly baguette, pâté and mayo, pickled daikon and carrot, cucumber, cilantro, jalapeño. Under ten dollars, every one of them.*
 
@@ -223,7 +264,7 @@ out loud on the ordering section.*
 | BM3 | **Lemongrass Beef Banh Mi** | Lemongrass-marinated beef. | $9.50 |
 | BM4 | **Grilled Honey Chicken Banh Mi** | Honey-glazed grilled chicken. | $9.50 |
 
-### Drinks — Nước Uống
+### Drinks (Nước Uống)
 
 *Fruit blended to order, tea brewed in house, and coffee that drips at its own pace.*
 
@@ -243,7 +284,7 @@ out loud on the ordering section.*
 | D12 | **Lemonade** (v) | Fresh-squeezed. | $4.00 |
 | D13 | **Soda** (v) | Canned soft drinks. | $2.50 |
 
-### Dessert — Tráng Miệng
+### Dessert (Tráng Miệng)
 
 *One thing, done softly.*
 
@@ -253,7 +294,7 @@ out loud on the ordering section.*
 
 ---
 
-## 5. Customer Reviews / Testimonials
+## 6. Customer Reviews / Testimonials
 
 **Eyebrow:** In their words
 
@@ -265,57 +306,57 @@ out loud on the ordering section.*
 > Every quote below is a real, published Google review.
 > *Link:* Read them on Google →
 
-**The six review cards** — each shows the reviewer's name, their Google Local
+**The six review cards.** Each shows the reviewer's name, their Google Local
 Guide credential and their visit context, because that is verifiable and far
 more persuasive than an anonymous row of stars.
 
 > **"Best Pho in the Southwest area!"**
 > Always fresh and delicious! Service is awesome with smiles and quality!
-> — **BJ the Space Hunter** · Local Guide · 97 reviews · 905 photos · 8 months ago · Dine in
+> **BJ the Space Hunter** · Local Guide · 97 reviews · 905 photos · 8 months ago · Dine in
 
 > **"One of the best Pho restaurants in town"**
 > I've been coming to this restaurant for years and it truly honestly is one of
 > the best Pho restaurants in town. Their bowls are huge and come blazing hot
 > and fresh. I personally love the veggie pho at this restaurant.
-> — **Christina Marie** · Local Guide · 267 reviews · 421 photos · a year ago · Dine in · Lunch · $10–20
+> **Christina Marie** · Local Guide · 267 reviews · 421 photos · a year ago · Dine in · Lunch · $10–20
 
 > **"A very nostalgic taste"**
-> Been going here since they started business — their pho has a very nostalgic
+> Been going here since they started business. Their pho has a very nostalgic
 > taste. The pho was great and was served very quickly. The staff were very nice
 > and friendly. Parking is no problem and plentiful.
-> — **Eddie Lluisma** · Local Guide · 449 reviews · 2,528 photos · 4 months ago · Dine in · Dinner · $10–20
+> **Eddie Lluisma** · Local Guide · 449 reviews · 2,528 photos · 4 months ago · Dine in · Dinner · $10–20
 
 > **"The pho was flavorful"**
 > It's a cute good size restaurant, not too small not too big. The pho was
-> flavorful — I created my own. Price was on point in comparison to most places,
+> flavorful. I created my own. Price was on point in comparison to most places,
 > a good amount. The staff was welcoming and checked up often, even with small
 > thoughtful questions.
-> — **Michelle G** · Local Guide · 392 reviews · 297 photos · 4 months ago · Dine in · Lunch · $10–20
+> **Michelle G** · Local Guide · 392 reviews · 297 photos · 4 months ago · Dine in · Lunch · $10–20
 
 > **"The food is always incredible"**
 > I come here often. The food is always incredible and the service is even
 > better. They are always so kind and accommodating. Definitely recommend!
-> — **Anissa Bounaouar** · 4 reviews · a month ago · Dine in · $10–20
+> **Anissa Bounaouar** · 4 reviews · a month ago · Dine in · $10–20
 
 > **"Worth the extra drive"**
 > Food was very good, and came quickly. Cucumber salad in peanut sauce was
 > amazing and worth the extra drive to the south west side.
-> — **Mama Mia** · Local Guide · 25 reviews · 19 photos · 9 months ago · Lunch · $20–30
+> **Mama Mia** · Local Guide · 25 reviews · 19 photos · 9 months ago · Lunch · $20–30
 
 **How these were handled.** Each headline is a verbatim fragment of that same
-review — nothing was written for the site. Quotes are trimmed to the sentences
+review, never a phrase written for the site. Quotes are trimmed to the sentences
 Google displayed before "… More", with obvious typos and sentence casing
 corrected and nothing else altered. No star rating is shown, because Google's
 per-review star counts were not in the source. To add them, put `rating: 5` on a
 review in `assets/js/data.js` and the stars render themselves.
 
-**Image — no photo needed.** This section is deliberately dark and typographic;
+**Image: no photo needed.** This section is deliberately dark and typographic;
 dropping photos in here weakens it. If you want one, use a single wide shot of a
 full dining room as a section background at about 12% opacity.
 
 ---
 
-## 6. Location & Contact
+## 7. Location & Contact
 
 **Eyebrow:** Visit
 
@@ -335,7 +376,7 @@ full dining room as a section background at about 12% opacity.
 | Sunday | 10:00 AM – 9:30 PM |
 
 **Note:**
-> Kitchen stops taking orders shortly before close. Holiday hours may vary —
+> Kitchen stops taking orders shortly before close. Holiday hours may vary, so
 > give us a call if you are cutting it close.
 
 **H3:** Find us
@@ -350,16 +391,16 @@ full dining room as a section background at about 12% opacity.
 
 **Button:** Get directions →
 
-**Image — storefront (1600 × 1000):**
+**Image, storefront (1600 × 1000):**
 The building from the parking lot with the sign legible, shot late afternoon so
 the light is warm. This is the photo that stops a first-time customer from
-driving past — it tells them what to look for. A second shot of the lot itself
+driving past, because it tells them what to look for. A second shot of the lot itself
 is worth adding; "parking is no problem and plentiful" comes up in the reviews
 unprompted.
 
 ---
 
-## 7. Online Ordering
+## 8. Online Ordering
 
 **Eyebrow:** Order online
 
@@ -367,7 +408,7 @@ unprompted.
 > Pickup in fifteen. Delivery to your door.
 
 **Body:**
-> Call the restaurant directly for pickup — it is the fastest way, and the
+> Call the restaurant directly for pickup. It is the fastest way, and the
 > kitchen gets your ticket immediately. For delivery, we are live on every major
 > app in the valley.
 >
@@ -388,16 +429,16 @@ unprompted.
 
 **Closing line:**
 > Ordering pickup? Call us. No app fees, no markup, ready in about fifteen
-> minutes. — **(702) 269-0348**
+> minutes. **(702) 269-0348**
 
-**Image — drinks.jpg (1000 × 800):**
+**Image, drinks.jpg (1000 × 800):**
 Vietnamese iced coffee mid-pour, condensed milk still marbling through, next to
 a fruit smoothie. High-contrast and it photographs beautifully. Optional here;
 the partner logo grid carries the section on its own.
 
 ---
 
-## 8. Final CTA
+## 9. Final CTA
 
 **H2:**
 > Come hungry. Leave warm.
@@ -416,10 +457,10 @@ the partner logo grid carries the section on its own.
 
 ---
 
-## 9. SEO
+## 10. SEO
 
 **Page title (59 characters):**
-> Jenni Pho — Vietnamese Kitchen in Las Vegas | Pho & Banh Mi
+> Jenni Pho: Vietnamese Kitchen in Las Vegas | Pho & Banh Mi
 
 **Meta description (149 characters):**
 > Family-owned Vietnamese kitchen on S Rainbow Blvd since 2008. Oxtail pho
@@ -429,7 +470,7 @@ the partner logo grid carries the section on its own.
 > Pho, banh mi and charbroiled rice plates in southwest Las Vegas. Order pickup
 > or delivery, or dine in daily 10am–9:30pm. 7855 S Rainbow Blvd.
 
-**Open Graph title:** Jenni Pho — Vietnamese Kitchen in Las Vegas
+**Open Graph title:** Jenni Pho: Vietnamese Kitchen in Las Vegas
 **Open Graph description:** Oxtail pho with broth simmered overnight. Banh mi
 under $10. Open daily on South Rainbow Blvd since 2008.
 **Open Graph image:** your hero photo, 1200 × 630
@@ -448,7 +489,7 @@ that single step drives more traffic than everything else here combined.
 
 ---
 
-## 10. Image Checklist
+## 11. Image Checklist
 
 Drop files into `assets/photos/` using these exact names, then uncomment the
 matching line in the `PHOTOS` block of `assets/js/data.js`. Anything left
@@ -467,13 +508,13 @@ time and the site is never broken.
 | `vermicelli.jpg` | 1000 × 800 | Gallery, Vermicelli | Bun bowl overhead, herbs and pickles visible |
 | `drinks.jpg` | 1000 × 800 | Gallery, Drinks | Vietnamese iced coffee mid-pour |
 
-**Shooting notes.** Overhead, natural light, near a window, no flash — flash
+**Shooting notes.** Overhead, natural light, near a window, no flash, because flash
 flattens broth and turns the fat cap grey. Photograph bowls the moment they
 leave the pass; steam reads as fresh. Export JPEG at quality 75–80 at the sizes
 above and keep each under about 300 KB.
 
 **On the Google photos.** The images on the Google listing were shot and
-uploaded by the reviewers — Eddie Lluisma alone has 2,528 photos on his profile —
+uploaded by the reviewers (Eddie Lluisma alone has 2,528 photos on his profile),
 and the copyright in them belongs to those individuals, not to the restaurant.
 Reposting them on a commercial site is a real risk, and the same applies to
 photos pulled from Yelp or the delivery apps. Use photos the restaurant took or
