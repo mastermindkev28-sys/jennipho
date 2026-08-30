@@ -783,24 +783,51 @@ mark.hl { background: rgba(223, 161, 59, 0.42); color: inherit; border-radius: 2
   border-color: rgba(246, 241, 231, 0.24);
   transform: translateY(-4px);
 }
-.review__stars { display: flex; gap: 3px; margin-bottom: 16px; }
+.review__head {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 18px;
+}
+.review__avatar {
+  flex: none;
+  display: grid; place-items: center;
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(150deg, var(--amber), var(--amber-deep, #b8791f));
+  color: #1A1613;
+  font-family: var(--display); font-size: 1.05rem; font-weight: 600;
+  line-height: 1;
+}
+.review__who { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.review__name {
+  font-size: 14.5px; font-weight: 600; color: var(--on-dark-1, #F6F1E7);
+  letter-spacing: -0.005em;
+}
+.review__cred {
+  font-size: 11.5px; color: var(--on-dark-3);
+  letter-spacing: 0.01em;
+}
+.review__stars { display: flex; gap: 3px; margin-bottom: 14px; }
 .review__stars svg { width: 14px; height: 14px; color: var(--amber); }
 .review__title {
   font-family: var(--display); font-size: 1.18rem; font-weight: 600;
   margin-bottom: 11px; letter-spacing: -0.015em;
+  color: var(--amber);
 }
 .review__quote {
   font-size: 14.8px; line-height: 1.62; color: var(--on-dark-2);
   flex: 1; margin: 0;
 }
 .review__foot {
-  display: flex; align-items: center; gap: 8px;
+  display: flex; flex-direction: column; align-items: flex-start; gap: 4px;
   margin-top: 20px; padding-top: 16px;
   border-top: 1px solid var(--ink-line);
-  font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase;
-  font-weight: 600; color: var(--on-dark-3);
+  font-size: 12px; color: var(--on-dark-3);
 }
-.review__foot a { color: var(--on-dark-3); transition: color 0.2s var(--ease); }
+.review__meta { opacity: 0.8; }
+.review__foot a {
+  color: var(--on-dark-3); font-weight: 600;
+  transition: color 0.2s var(--ease);
+}
 .review__foot a:hover { color: var(--amber); }
 
 /* ---------- Gallery ---------- */

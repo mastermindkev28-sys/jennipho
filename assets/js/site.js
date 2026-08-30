@@ -205,24 +205,43 @@
   }
 
   function renderReviews() {
-    const stars = $(".score__stars");
-    if (stars) stars.innerHTML = STAR.repeat(5);
-
     const host = $("[data-reviews]");
     if (!host) return;
-    host.innerHTML = REVIEWS.map(
-      (r) =>
+
+    host.innerHTML = REVIEWS.map((r) => {
+      const initial = (r.author || "?").trim().charAt(0).toUpperCase();
+
+      const starRow = r.rating
+        ? `<div class="review__stars" role="img" aria-label="${r.rating} out of 5 stars">` +
+          STAR.repeat(r.rating) + `</div>`
+        : "";
+
+      const meta = [r.date, r.context].filter(Boolean).map(esc).join(" &middot; ");
+
+      const src = r.url
+        ? `<a href="${r.url}" target="_blank" rel="noopener noreferrer">${esc(r.source)} review</a>`
+        : `<span>${esc(r.source)} review</span>`;
+
+      return (
         `<article class="review">` +
-        `<div class="review__stars" role="img" aria-label="${r.rating} out of 5 stars">` +
-        STAR.repeat(r.rating) + `</div>` +
-        `<h3 class="review__title">${esc(r.title)}</h3>` +
-        `<blockquote class="review__quote">${esc(r.quote)}</blockquote>` +
-        `<footer class="review__foot">` +
-        (r.url
-          ? `<a href="${r.url}" target="_blank" rel="noopener noreferrer">via ${esc(r.source)}</a>`
-          : `<span>via ${esc(r.source)}</span>`) +
-        `</footer></article>`
-    ).join("");
+          `<div class="review__head">` +
+            `<span class="review__avatar" aria-hidden="true">${esc(initial)}</span>` +
+            `<span class="review__who">` +
+              `<span class="review__name">${esc(r.author)}</span>` +
+              (r.credential
+                ? `<span class="review__cred">${esc(r.credential)}</span>`
+                : "") +
+            `</span>` +
+          `</div>` +
+          starRow +
+          `<h3 class="review__title">&ldquo;${esc(r.headline)}&rdquo;</h3>` +
+          `<blockquote class="review__quote">${esc(r.quote)}</blockquote>` +
+          `<footer class="review__foot">` +
+            src + (meta ? `<span class="review__meta">${meta}</span>` : "") +
+          `</footer>` +
+        `</article>`
+      );
+    }).join("");
   }
 
   function renderGallery() {
@@ -451,6 +470,15 @@
       el.textContent = val;
     });
     $$("[data-year]").forEach((el) => (el.textContent = new Date().getFullYear()));
+
+    /* Years in business, computed so it never goes stale. */
+    const years = new Date().getFullYear() - BUSINESS.founded;
+    const WORDS = ["Ten","Eleven","Twelve","Thirteen","Fourteen","Fifteen",
+                   "Sixteen","Seventeen","Eighteen","Nineteen","Twenty"];
+    $$("[data-years]").forEach((el) => (el.textContent = years));
+    $$("[data-years-word]").forEach(
+      (el) => (el.textContent = WORDS[years - 10] || String(years))
+    );
   }
 
   /* ---------------- Boot ---------------- */

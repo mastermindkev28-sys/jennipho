@@ -8,6 +8,7 @@ one script, one data file. Open `index.html` in a browser and it works.
 
 ```
 index.html            Home — hero, story, signatures, reviews, gallery, ordering, hours
+COPY-DECK.md          All site copy, section by section, for a website builder
 menu.html             Full menu, searchable and filterable, with prices
 assets/css/site.css   All styles
 assets/js/data.js     ← everything you will ever want to edit lives here
@@ -46,23 +47,29 @@ page; which four appear is set by the `wanted` list in `site.js`.
 
 ## Reviews — please read
 
-The four review cards are **real, published guest reviews**, quoted from
-Tripadvisor, and each card links back to its source. Nothing on the page is
-invented.
+The six review cards are **real, published Google reviews**. Each card shows the
+reviewer's name, their Google Local Guide credential (review and photo counts)
+and their visit context, because that is verifiable and more persuasive than an
+anonymous row of stars. Nothing on the page is invented.
 
-The aggregate figure on the reviews panel reads **"From the published guest
-reviews quoted below"** rather than claiming a platform-wide star average,
-because no verified Google rating was available when this was built.
+How the quotes were handled:
 
-**To use your Google reviews instead** (recommended — they are your best
-social proof):
+- Each card's headline is a **verbatim fragment of that same review** — never a
+  phrase written for the site.
+- Quotes are trimmed to the sentences Google displayed before "… More".
+- Obvious typos and sentence casing were corrected. Nothing else was changed.
 
-1. Open your Google Business Profile → Reviews.
-2. For each review you want, copy the reviewer's name, star rating and text.
-3. Add an entry to `REVIEWS` in `data.js` with `source: "Google"` and, if you
-   have it, the review's permalink as `url`.
-4. Update the `score__num` figure and the label beside it in `index.html` to
-   your actual Google rating and review count.
+**No star rating is displayed.** Google's per-review star counts were not in the
+source material, and the site does not claim an aggregate Google rating it
+cannot verify. To show stars on a card, add `rating: 5` to that review in
+`data.js` and they render automatically. The `aggregateRating` field is
+deliberately absent from the JSON-LD — publishing a rating you cannot
+substantiate is a structured-data violation Google penalises.
+
+The panel beside the heading cites **687 reviews on Yelp**, which is verifiable
+from the public Yelp listing. If you want a Google figure there instead, take
+the real rating and count from your Google Business Profile and edit the
+`score__num` and its label in `index.html`.
 
 Two rules worth keeping: quote reviews verbatim, and never write a review
 yourself. Fabricated reviews violate the platforms' terms and, in the US, the
@@ -89,8 +96,12 @@ for the restaurant no matter where the visitor is.
 - [ ] Replace `https://jennipho.com/` in the `<link rel="canonical">`, the
       `og:` tags and the JSON-LD of both pages with your real domain.
 - [ ] Update `sitemap.xml` and `robots.txt` with the same domain.
-- [ ] Add real photos (`assets/photos/README.md`).
-- [ ] Swap in Google reviews (see above).
+- [ ] Add real photos (`assets/photos/README.md`) — the biggest single upgrade
+      left. Use photos the restaurant owns; the images on the Google listing
+      belong to the reviewers who uploaded them.
+- [x] Swap in Google reviews — done, six of them (see above).
+- [ ] Optional: add each review's real star count (`rating: 5`) from your
+      Google Business Profile.
 - [ ] Claim/refresh the Google Business Profile and set the website field to
       the new domain. That single step drives most of a local restaurant's
       search traffic.

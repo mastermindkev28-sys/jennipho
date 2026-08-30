@@ -248,44 +248,88 @@ const MENU = [
 
 /* ------------------------------------------------------------------
    REVIEWS
-   Every quote below is from a published, public review. `source` is
-   shown on the card so nothing is presented as something it isn't.
-   To add Google reviews: copy the reviewer name, rating, date and text
-   from your Google Business Profile and add an entry with
-   source: "Google". See README.md ("Reviews") before editing.
+   Real, published Google reviews. Each card shows the reviewer's name,
+   their Google Local Guide credential and their visit context, because
+   that is verifiable and more persuasive than an anonymous star row.
+
+   `headline` is always a verbatim fragment of that same review - never
+   a phrase written for the site. Quotes are trimmed to the sentences
+   Google showed before "... More", with obvious typos and casing
+   corrected and nothing else changed.
+
+   No numeric rating is stored: Google's per-review star counts were not
+   available when this was built. Add `rating: 5` to a review and its
+   stars render automatically. See README.md ("Reviews") before editing.
    ------------------------------------------------------------------ */
+const REVIEWS_URL =
+  "https://www.google.com/maps/search/?api=1&query=Jenni+Pho+7855+S+Rainbow+Blvd+Las+Vegas+NV+89139";
+
 const REVIEWS = [
   {
-    rating: 5,
-    source: "Tripadvisor",
-    title: "It's PHO-NOMINAL!",
+    author: "BJ the Space Hunter",
+    credential: "Local Guide \u00b7 97 reviews \u00b7 905 photos",
+    date: "8 months ago",
+    context: "Dine in",
+    source: "Google",
+    headline: "Best Pho in the Southwest area!",
     quote:
-      "I never had fresh Pho like this before, and I had Pho in San Diego, NYC, and various spots in Vegas. I have nothing but great things to say about this place. The food was clean and the place was uber clean. The see-through kitchen proved how teamwork truly makes the dream work. I am definitely coming back to this spot.",
-    url: "https://www.tripadvisor.com/ShowUserReviews-g45963-d4948636-r547577107-Jenni_Pho-Las_Vegas_Nevada.html",
+      "Always fresh and delicious! Service is awesome with smiles and quality!",
+    url: REVIEWS_URL,
   },
   {
-    rating: 5,
-    source: "Tripadvisor",
-    title: "Jenni is the BEST",
+    author: "Christina Marie",
+    credential: "Local Guide \u00b7 267 reviews \u00b7 421 photos",
+    date: "a year ago",
+    context: "Dine in \u00b7 Lunch \u00b7 $10\u201320",
+    source: "Google",
+    headline: "One of the best Pho restaurants in town",
     quote:
-      "In the sea of never-ending Vietnamese soup joints in Las Vegas, Jenni is truly the best. Low prices, high quality food, and a variety of food and size options. Sparkling clean, with friendly, attentive staff.",
-    url: "https://www.tripadvisor.com/ShowUserReviews-g45963-d4948636-r289236556-Jenni_Pho-Las_Vegas_Nevada.html",
+      "I've been coming to this restaurant for years and it truly honestly is one of the best Pho restaurants in town. Their bowls are huge and come blazing hot and fresh. I personally love the veggie pho at this restaurant.",
+    url: REVIEWS_URL,
   },
   {
-    rating: 5,
-    source: "Tripadvisor",
-    title: "Treated like the only table in the room",
+    author: "Eddie Lluisma",
+    credential: "Local Guide \u00b7 449 reviews \u00b7 2,528 photos",
+    date: "4 months ago",
+    context: "Dine in \u00b7 Dinner \u00b7 $10\u201320",
+    source: "Google",
+    headline: "A very nostalgic taste",
     quote:
-      "The customer service from all of Jenni Pho's staff was fantastic. They made our party feel like we were the only people in the restaurant. Service was quick and everyone was very friendly.",
-    url: "https://www.tripadvisor.com/Restaurant_Review-g45963-d4948636-Reviews-Jenni_Pho-Las_Vegas_Nevada.html",
+      "Been going here since they started business \u2014 their pho has a very nostalgic taste. The pho was great and was served very quickly. The staff were very nice and friendly. Parking is no problem and plentiful.",
+    url: REVIEWS_URL,
   },
   {
-    rating: 5,
-    source: "Tripadvisor",
-    title: "They sang for his birthday",
+    author: "Michelle G",
+    credential: "Local Guide \u00b7 392 reviews \u00b7 297 photos",
+    date: "4 months ago",
+    context: "Dine in \u00b7 Lunch \u00b7 $10\u201320",
+    source: "Google",
+    headline: "The pho was flavorful",
     quote:
-      "My father-in-law has been coming here since the opening. It was his birthday, and the owner gave us ice cream and played Happy Birthday over the loudspeaker. They're just so hospitable and friendly.",
-    url: "https://www.tripadvisor.com/ShowUserReviews-g45963-d4948636-r547577107-Jenni_Pho-Las_Vegas_Nevada.html",
+      "It's a cute good size restaurant, not too small not too big. The pho was flavorful \u2014 I created my own. Price was on point in comparison to most places, a good amount. The staff was welcoming and checked up often, even with small thoughtful questions.",
+    url: REVIEWS_URL,
+  },
+  {
+    author: "Anissa Bounaouar",
+    credential: "4 reviews",
+    date: "a month ago",
+    context: "Dine in \u00b7 $10\u201320",
+    source: "Google",
+    headline: "The food is always incredible",
+    quote:
+      "I come here often. The food is always incredible and the service is even better. They are always so kind and accommodating. Definitely recommend!",
+    url: REVIEWS_URL,
+  },
+  {
+    author: "Mama Mia",
+    credential: "Local Guide \u00b7 25 reviews \u00b7 19 photos",
+    date: "9 months ago",
+    context: "Lunch \u00b7 $20\u201330",
+    source: "Google",
+    headline: "Worth the extra drive",
+    quote:
+      "Food was very good, and came quickly. Cucumber salad in peanut sauce was amazing and worth the extra drive to the south west side.",
+    url: REVIEWS_URL,
   },
 ];
 
