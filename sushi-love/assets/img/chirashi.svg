@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Chirashi bowl over seasoned sushi rice">
+<rect width="400" height="400" rx="28" fill="#101319"/>
+<circle cx="200" cy="206" r="132" fill="#1B212A"/>
+<circle cx="200" cy="206" r="120" fill="#F4EFE6"/>
+<circle cx="200" cy="206" r="104" fill="#EAE1CF"/>
+<g>
+<rect x="112" y="150" width="82" height="26" rx="13" fill="#FF7A5C" transform="rotate(-14 153 163)"/>
+<rect x="206" y="146" width="82" height="26" rx="13" fill="#C8384A" transform="rotate(10 247 159)"/>
+<rect x="106" y="204" width="82" height="26" rx="13" fill="#F6C99B" transform="rotate(6 147 217)"/>
+<rect x="208" y="200" width="82" height="26" rx="13" fill="#5E4436" transform="rotate(-8 249 213)"/>
+<rect x="150" y="250" width="82" height="26" rx="13" fill="#E5A0A8" transform="rotate(4 191 263)"/>
+<circle cx="262" cy="256" r="17" fill="#E8B45A"/><circle cx="262" cy="256" r="9" fill="#FFD68F"/>
+<circle cx="136" cy="262" r="13" fill="#93B478"/>
+</g>
+<g fill="#E8B45A" opacity=".9"><circle cx="184" cy="192" r="3"/><circle cx="228" cy="230" r="3"/><circle cx="166" cy="234" r="3"/><circle cx="246" cy="184" r="3"/></g>
+<path d="M92 296c56 30 160 30 216 0" stroke="#2A303A" stroke-width="8" fill="none" stroke-linecap="round"/>
+</svg>

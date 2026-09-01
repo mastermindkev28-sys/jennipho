@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Nigiri sushi combination">
+<rect width="400" height="400" rx="28" fill="#101319"/>
+<rect x="42" y="118" width="316" height="188" rx="20" fill="#171B22"/>
+<rect x="42" y="118" width="316" height="188" rx="20" fill="none" stroke="#2A303A" stroke-width="2"/>
+<g>
+<g transform="translate(120 190) rotate(-8)"><rect x="-52" y="-16" width="104" height="34" rx="17" fill="#F4EFE6"/><path d="M-54-16c14-16 94-16 108 0 4 12-6 20-18 20h-72c-12 0-22-8-18-20z" fill="#FF7A5C"/><path d="M-40-12c18 6 60 6 78 0" stroke="#FFB79E" stroke-width="4" fill="none" stroke-linecap="round"/></g>
+<g transform="translate(268 186) rotate(6)"><rect x="-52" y="-16" width="104" height="34" rx="17" fill="#F4EFE6"/><path d="M-54-16c14-16 94-16 108 0 4 12-6 20-18 20h-72c-12 0-22-8-18-20z" fill="#C8384A"/><path d="M-40-12c18 6 60 6 78 0" stroke="#E4707E" stroke-width="4" fill="none" stroke-linecap="round"/></g>
+<g transform="translate(120 262) rotate(5)"><rect x="-52" y="-16" width="104" height="34" rx="17" fill="#F4EFE6"/><path d="M-54-16c14-16 94-16 108 0 4 12-6 20-18 20h-72c-12 0-22-8-18-20z" fill="#EFE3C4"/><rect x="-12" y="-22" width="24" height="46" rx="3" fill="#1E2A2B"/></g>
+<g transform="translate(268 264) rotate(-6)"><rect x="-52" y="-16" width="104" height="34" rx="17" fill="#F4EFE6"/><path d="M-54-16c14-16 94-16 108 0 4 12-6 20-18 20h-72c-12 0-22-8-18-20z" fill="#5E4436"/><path d="M-44-6c22 8 66 8 88 0" stroke="#E8B45A" stroke-width="5" fill="none" stroke-linecap="round"/></g>
+</g>
+<circle cx="200" cy="148" r="12" fill="#93B478"/>
+<path d="M188 148h24" stroke="#101319" stroke-width="2"/>
+</svg>

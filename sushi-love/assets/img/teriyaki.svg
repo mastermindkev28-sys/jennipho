@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Chicken teriyaki bowl">
+<rect width="400" height="400" rx="28" fill="#101319"/>
+<circle cx="200" cy="208" r="128" fill="#1B212A"/>
+<circle cx="200" cy="208" r="116" fill="#F4EFE6"/>
+<circle cx="200" cy="208" r="100" fill="#EFE8DA"/>
+<g>
+<rect x="118" y="164" width="76" height="30" rx="10" fill="#B9773F" transform="rotate(-9 156 179)"/>
+<rect x="204" y="160" width="76" height="30" rx="10" fill="#B9773F" transform="rotate(7 242 175)"/>
+<rect x="124" y="212" width="76" height="30" rx="10" fill="#A96833" transform="rotate(5 162 227)"/>
+<rect x="206" y="214" width="76" height="30" rx="10" fill="#A96833" transform="rotate(-6 244 229)"/>
+</g>
+<path d="M124 254c40 22 112 22 152 0" stroke="#6B3F1E" stroke-width="7" fill="none" stroke-linecap="round" opacity=".75"/>
+<g fill="#93B478"><circle cx="146" cy="266" r="8"/><circle cx="200" cy="274" r="8"/><circle cx="254" cy="266" r="8"/></g>
+<g fill="#FFF6E8"><circle cx="168" cy="150" r="3"/><circle cx="232" cy="146" r="3"/><circle cx="200" cy="196" r="3"/><circle cx="150" cy="196" r="3"/><circle cx="250" cy="198" r="3"/></g>
+</svg>

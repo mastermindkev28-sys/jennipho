@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Fire roll, flamed at the table">
+<defs>
+<linearGradient id="fbg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1A1216"/><stop offset="1" stop-color="#0E1014"/></linearGradient>
+<radialGradient id="flame" cx=".5" cy=".8" r=".6"><stop offset="0" stop-color="#FFC46B" stop-opacity=".9"/><stop offset="1" stop-color="#FF5C3B" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="400" height="400" rx="28" fill="url(#fbg)"/>
+<ellipse cx="200" cy="290" rx="150" ry="70" fill="url(#flame)"/>
+<path d="M120 250c-14-30 18-42 4-76 22 16 34 40 22 66zM200 240c-18-36 22-52 4-92 28 20 44 50 28 82zM280 252c-13-28 17-40 4-72 21 15 32 38 21 63z" fill="#FF6A3D" opacity=".95"/>
+<path d="M200 250c-11-22 13-32 2-56 17 12 27 30 17 50z" fill="#FFC46B"/>
+<rect x="52" y="272" width="296" height="16" rx="8" fill="#221A1E"/>
+<g>
+<g transform="translate(96 236)"><ellipse cx="0" cy="34" rx="34" ry="9" fill="#000" opacity=".35"/><circle cx="0" cy="0" r="34" fill="#F4EFE6"/><circle cx="0" cy="0" r="24" fill="#1E2A2B"/><circle cx="0" cy="0" r="15" fill="#FF7A5C"/><path d="M-34 0a34 34 0 0 0 68 0" fill="#E8DFD0" opacity=".5"/><path d="M-30-14c8 6 16 8 26 6" stroke="#FFF6E8" stroke-width="4" fill="none" stroke-linecap="round"/></g>
+<g transform="translate(200 224)"><ellipse cx="0" cy="38" rx="38" ry="10" fill="#000" opacity=".35"/><circle cx="0" cy="0" r="38" fill="#F4EFE6"/><circle cx="0" cy="0" r="27" fill="#1E2A2B"/><circle cx="0" cy="0" r="17" fill="#C8384A"/><path d="M-38 0a38 38 0 0 0 76 0" fill="#E8DFD0" opacity=".5"/><path d="M-34-16c9 7 18 9 29 7" stroke="#FFF6E8" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M-20 26c14 6 26 6 40 0" stroke="#E8B45A" stroke-width="4" fill="none" stroke-linecap="round"/></g>
+<g transform="translate(304 236)"><ellipse cx="0" cy="34" rx="34" ry="9" fill="#000" opacity=".35"/><circle cx="0" cy="0" r="34" fill="#F4EFE6"/><circle cx="0" cy="0" r="24" fill="#1E2A2B"/><circle cx="0" cy="0" r="15" fill="#FF7A5C"/><path d="M-34 0a34 34 0 0 0 68 0" fill="#E8DFD0" opacity=".5"/><path d="M-30-14c8 6 16 8 26 6" stroke="#FFF6E8" stroke-width="4" fill="none" stroke-linecap="round"/></g>
+</g>
+<g fill="#93B478"><circle cx="150" cy="200" r="4"/><circle cx="252" cy="192" r="4"/><circle cx="200" cy="176" r="4"/></g>
+</svg>

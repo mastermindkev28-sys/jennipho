@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Spicy garlic edamame">
+<rect width="400" height="400" rx="28" fill="#101319"/>
+<circle cx="200" cy="212" r="126" fill="#1B212A"/>
+<circle cx="200" cy="212" r="112" fill="#F4EFE6"/>
+<circle cx="200" cy="212" r="96" fill="#ECE4D4"/>
+<g fill="#7FA65E">
+<g transform="translate(158 176) rotate(-24)"><rect x="-48" y="-15" width="96" height="30" rx="15"/><g fill="#5E8443"><circle cx="-26" cy="0" r="7"/><circle cx="0" cy="0" r="7"/><circle cx="26" cy="0" r="7"/></g></g>
+<g transform="translate(244 200) rotate(16)"><rect x="-48" y="-15" width="96" height="30" rx="15"/><g fill="#5E8443"><circle cx="-26" cy="0" r="7"/><circle cx="0" cy="0" r="7"/><circle cx="26" cy="0" r="7"/></g></g>
+<g transform="translate(166 248) rotate(8)"><rect x="-48" y="-15" width="96" height="30" rx="15"/><g fill="#5E8443"><circle cx="-26" cy="0" r="7"/><circle cx="0" cy="0" r="7"/><circle cx="26" cy="0" r="7"/></g></g>
+</g>
+<g fill="#E8B45A"><circle cx="132" cy="216" r="5"/><circle cx="266" cy="242" r="5"/><circle cx="204" cy="160" r="5"/><circle cx="220" cy="286" r="5"/></g>
+<path d="M120 276c48 24 112 24 160 0" stroke="#FF5C3B" stroke-width="6" fill="none" stroke-linecap="round" opacity=".8"/>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Baja roll topped with yellowtail and micro cilantro">
+<rect width="400" height="400" rx="28" fill="#101319"/>
+<ellipse cx="200" cy="300" rx="160" ry="46" fill="#0B0D12"/>
+<ellipse cx="200" cy="296" rx="150" ry="40" fill="#171B22"/>
+<g>
+<g transform="translate(104 250)"><circle r="36" fill="#F4EFE6"/><circle r="25" fill="#1E2A2B"/><circle r="15" fill="#C8384A"/><path d="M-36 0a36 36 0 0 0 72 0" fill="#E4DCCD" opacity=".45"/><path d="M-34-8c-2-24 16-34 34-30 20 4 30 20 26 34-18 8-42 8-60-4z" fill="#F6C99B"/><path d="M-30-14c10 5 22 6 34 3" stroke="#FFE7CF" stroke-width="3.5" fill="none" stroke-linecap="round"/></g>
+<g transform="translate(200 238)"><circle r="40" fill="#F4EFE6"/><circle r="28" fill="#1E2A2B"/><circle r="17" fill="#C8384A"/><path d="M-40 0a40 40 0 0 0 80 0" fill="#E4DCCD" opacity=".45"/><path d="M-38-9c-2-27 18-38 38-33 22 5 33 22 29 38-20 9-47 9-67-5z" fill="#F6C99B"/><path d="M-33-16c11 6 25 7 38 4" stroke="#FFE7CF" stroke-width="4" fill="none" stroke-linecap="round"/></g>
+<g transform="translate(296 250)"><circle r="36" fill="#F4EFE6"/><circle r="25" fill="#1E2A2B"/><circle r="15" fill="#C8384A"/><path d="M-36 0a36 36 0 0 0 72 0" fill="#E4DCCD" opacity=".45"/><path d="M-34-8c-2-24 16-34 34-30 20 4 30 20 26 34-18 8-42 8-60-4z" fill="#F6C99B"/><path d="M-30-14c10 5 22 6 34 3" stroke="#FFE7CF" stroke-width="3.5" fill="none" stroke-linecap="round"/></g>
+</g>
+<path d="M92 214c22 10 46 12 68 6M182 200c24 10 50 11 74 4M270 214c18 8 38 10 56 5" stroke="#6E9E63" stroke-width="5" fill="none" stroke-linecap="round" opacity=".9"/>
+<g fill="#93B478"><circle cx="128" cy="196" r="4.5"/><circle cx="214" cy="184" r="4.5"/><circle cx="290" cy="198" r="4.5"/></g>
+<path d="M120 300c30 10 130 10 160 0" stroke="#FF5C3B" stroke-width="5" fill="none" stroke-linecap="round" opacity=".8"/>
+</svg>

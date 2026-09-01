@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" role="img" aria-label="The dining room and sushi bar">
+<defs><linearGradient id="rg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#161A21"/><stop offset="1" stop-color="#0D1015"/></linearGradient></defs>
+<rect width="480" height="320" rx="20" fill="url(#rg)"/>
+<g opacity=".5" stroke="#2C3340" stroke-width="2"><path d="M0 214h480M60 214V96M180 214V96M300 214V96M420 214V96"/></g>
+<g fill="#E8B45A" opacity=".95"><circle cx="96" cy="76" r="7"/><circle cx="240" cy="66" r="8"/><circle cx="384" cy="76" r="7"/></g>
+<g stroke="#E8B45A" stroke-width="1.5" opacity=".5"><path d="M96 0v69M240 0v58M384 0v69"/></g>
+<g opacity=".22" fill="#E8B45A"><path d="M96 83l26 40H70zM240 74l30 46h-60zM384 83l26 40h-52z"/></g>
+<rect x="36" y="214" width="408" height="20" rx="6" fill="#F4EFE6"/>
+<rect x="36" y="234" width="408" height="46" rx="8" fill="#20262F"/>
+<g fill="#2A313C"><rect x="70" y="244" width="72" height="60" rx="8"/><rect x="204" y="244" width="72" height="60" rx="8"/><rect x="338" y="244" width="72" height="60" rx="8"/></g>
+<g><circle cx="106" cy="206" r="12" fill="#FF7A5C"/><circle cx="240" cy="206" r="12" fill="#C8384A"/><circle cx="374" cy="206" r="12" fill="#93B478"/></g>
+<rect x="36" y="180" width="408" height="10" rx="5" fill="#2C3340"/>
+</svg>
