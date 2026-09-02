@@ -1,0 +1,143 @@
+<meta charset="utf-8">
+<style>html,body{margin:0;background:#000}canvas{display:block}</style>
+<canvas id="c" width="1600" height="1000"></canvas>
+<script>
+const W=1600,H=1000,c=document.getElementById('c'),x=c.getContext('2d');
+
+/* ---- value noise ---- */
+let seed=1337; const rnd=()=>(seed=(seed*16807)%2147483647)/2147483647;
+const P=new Float32Array(256*256); for(let i=0;i<P.length;i++)P[i]=rnd();
+const smooth=t=>t*t*(3-2*t);
+function noise(u,v){
+  const xi=Math.floor(u)&255, yi=Math.floor(v)&255, xf=u-Math.floor(u), yf=v-Math.floor(v);
+  const a=P[yi*256+xi], b=P[yi*256+((xi+1)&255)], cc=P[((yi+1)&255)*256+xi], d=P[((yi+1)&255)*256+((xi+1)&255)];
+  const sx=smooth(xf), sy=smooth(yf);
+  return (a*(1-sx)+b*sx)*(1-sy)+(cc*(1-sx)+d*sx)*sy;
+}
+function fbm(u,v){let s=0,a=.5,f=1;for(let i=0;i<5;i++){s+=a*noise(u*f,v*f);f*=2;a*=.5}return s}
+
+/* ---- table ---- */
+const tg=x.createLinearGradient(0,0,W,H);
+tg.addColorStop(0,'#2A1410'); tg.addColorStop(.5,'#1C0D0B'); tg.addColorStop(1,'#120807');
+x.fillStyle=tg; x.fillRect(0,0,W,H);
+// wood grain
+x.save(); x.globalAlpha=.06;
+for(let i=0;i<160;i++){const y=rnd()*H; x.strokeStyle=rnd()>.5?'#8A5636':'#000';
+  x.lineWidth=.6+rnd()*2.2; x.beginPath();
+  for(let px=0;px<=W;px+=24){x.lineTo(px, y+Math.sin(px*.004+i)*7+fbm(px*.01,i)*10)} x.stroke();}
+x.restore();
+
+const CX=W*.5, CY=H*.5, R=Math.min(W,H)*.485;
+
+/* ---- bowl shadow ---- */
+x.save(); x.filter='blur(42px)'; x.fillStyle='rgba(0,0,0,.72)';
+x.beginPath(); x.ellipse(CX+14,CY+34,R*1.06,R*.98,0,0,7); x.fill(); x.restore();
+
+/* ---- ceramic rim ---- */
+const rim=x.createLinearGradient(CX-R,CY-R,CX+R,CY+R);
+rim.addColorStop(0,'#FFFDF7'); rim.addColorStop(.42,'#EFE7D6'); rim.addColorStop(.72,'#CFC3AC'); rim.addColorStop(1,'#A99C86');
+x.fillStyle=rim; x.beginPath(); x.arc(CX,CY,R,0,7); x.fill();
+// inner rim shading
+const ir=x.createRadialGradient(CX,CY,R*.7,CX,CY,R);
+ir.addColorStop(0,'rgba(0,0,0,0)'); ir.addColorStop(1,'rgba(60,40,24,.42)');
+x.fillStyle=ir; x.beginPath(); x.arc(CX,CY,R,0,7); x.fill();
+
+/* ---- broth ---- */
+const BR=R*.845;
+x.save(); x.beginPath(); x.arc(CX,CY,BR,0,7); x.clip();
+const bg=x.createRadialGradient(CX-BR*.25,CY-BR*.3,BR*.05,CX,CY,BR*1.1);
+bg.addColorStop(0,'#C98A32'); bg.addColorStop(.45,'#A9641D'); bg.addColorStop(.8,'#7C4413'); bg.addColorStop(1,'#4E280B');
+x.fillStyle=bg; x.fillRect(CX-BR,CY-BR,BR*2,BR*2);
+// broth depth noise
+const img=x.getImageData(CX-BR,CY-BR,BR*2,BR*2), d=img.data;
+for(let py=0;py<BR*2;py++)for(let px=0;px<BR*2;px++){
+  const i=(py*(BR*2|0)+px)*4, n=fbm(px*.012,py*.012)-.5;
+  d[i]=Math.max(0,Math.min(255,d[i]+n*54)); d[i+1]=Math.max(0,Math.min(255,d[i+1]+n*40)); d[i+2]=Math.max(0,Math.min(255,d[i+2]+n*22));
+}
+x.putImageData(img,CX-BR,CY-BR);
+
+/* noodles under the surface */
+x.save(); x.filter='blur(3px)'; x.globalAlpha=.3; x.strokeStyle='#F3E6C8'; x.lineCap='round';
+for(let i=0;i<26;i++){const a=rnd()*7, rr=rnd()*BR*.8;
+  x.lineWidth=5+rnd()*5; x.beginPath();
+  let px=CX+Math.cos(a)*rr, py=CY+Math.sin(a)*rr; x.moveTo(px,py);
+  for(let s=0;s<5;s++){px+=Math.cos(a+s*.9+rnd())*34; py+=Math.sin(a+s*.9+rnd())*34; x.lineTo(px,py)} x.stroke();}
+x.restore();
+
+/* beef slices */
+function beef(px,py,rot,w,h){
+  x.save(); x.translate(px,py); x.rotate(rot);
+  const g=x.createLinearGradient(-w,-h,w,h);
+  g.addColorStop(0,'#9E4433'); g.addColorStop(.45,'#7E2E24'); g.addColorStop(1,'#5C1D18');
+  x.fillStyle=g; x.beginPath(); x.ellipse(0,0,w,h,0,0,7); x.fill();
+  x.globalAlpha=.5; x.strokeStyle='#D8A48C'; x.lineWidth=2.4;
+  for(let i=-2;i<=2;i++){x.beginPath(); x.moveTo(-w*.8, i*h*.32); x.bezierCurveTo(-w*.2,i*h*.32-6, w*.2,i*h*.32+6, w*.8,i*h*.32); x.stroke();}
+  x.globalAlpha=.28; x.fillStyle='#fff'; x.beginPath(); x.ellipse(-w*.3,-h*.35,w*.34,h*.2,rot,0,7); x.fill();
+  x.restore();
+}
+beef(CX-BR*.34,CY-BR*.1,-0.5,BR*.30,BR*.17);
+beef(CX+BR*.12,CY-BR*.32,0.7,BR*.28,BR*.16);
+beef(CX+BR*.30,CY+BR*.16,-0.25,BR*.29,BR*.16);
+beef(CX-BR*.10,CY+BR*.34,0.4,BR*.26,BR*.15);
+
+/* herbs */
+function scallion(px,py,r){ x.save(); x.translate(px,py);
+  x.fillStyle='#5E8F32'; x.beginPath(); x.arc(0,0,r,0,7); x.fill();
+  x.fillStyle='#8FC45A'; x.beginPath(); x.arc(0,0,r*.62,0,7); x.fill();
+  x.fillStyle='#C7E39B'; x.beginPath(); x.arc(0,0,r*.26,0,7); x.fill(); x.restore(); }
+x.save();
+for(let i=0;i<52;i++){const a=rnd()*7,rr=Math.sqrt(rnd())*BR*.88; x.globalAlpha=.75+rnd()*.25;
+  scallion(CX+Math.cos(a)*rr, CY+Math.sin(a)*rr, 3.2+rnd()*4.2);}
+x.restore();
+/* cilantro sprigs */
+x.save(); x.strokeStyle='#3C7A2E'; x.lineCap='round';
+for(let i=0;i<16;i++){const a=rnd()*7, rr=Math.sqrt(rnd())*BR*.8;
+  const px=CX+Math.cos(a)*rr, py=CY+Math.sin(a)*rr, ang=rnd()*7;
+  x.lineWidth=1.8; x.beginPath(); x.moveTo(px,py); x.lineTo(px+Math.cos(ang)*16,py+Math.sin(ang)*16); x.stroke();
+  x.fillStyle='#4E9138';
+  for(let k=0;k<3;k++){const t=.4+k*.28, lx=px+Math.cos(ang)*16*t, ly=py+Math.sin(ang)*16*t;
+    x.beginPath(); x.ellipse(lx,ly,5.5,3.4,ang+k*1.1,0,7); x.fill();}}
+x.restore();
+function basil(px,py,rot,s){ x.save(); x.translate(px,py); x.rotate(rot);
+  const g=x.createLinearGradient(0,-s,0,s); g.addColorStop(0,'#2F6B2A'); g.addColorStop(1,'#17401A');
+  x.fillStyle=g; x.beginPath(); x.moveTo(0,-s); x.quadraticCurveTo(s*.75,0,0,s); x.quadraticCurveTo(-s*.75,0,0,-s); x.fill();
+  x.strokeStyle='rgba(190,225,150,.5)'; x.lineWidth=1.6; x.beginPath(); x.moveTo(0,-s*.85); x.lineTo(0,s*.85); x.stroke(); x.restore(); }
+basil(CX-BR*.5,CY+BR*.12,0.5,BR*.15); basil(CX+BR*.44,CY-BR*.14,-0.7,BR*.13); basil(CX+BR*.02,CY-BR*.55,0.2,BR*.12);
+/* chilli */
+for(let i=0;i<7;i++){const a=rnd()*7,rr=rnd()*BR*.8,px=CX+Math.cos(a)*rr,py=CY+Math.sin(a)*rr,r=7+rnd()*5;
+  x.fillStyle='#C8232A'; x.beginPath(); x.arc(px,py,r,0,7); x.fill();
+  x.fillStyle='#E86A52'; x.beginPath(); x.arc(px,py,r*.55,0,7); x.fill();}
+
+/* oil droplets */
+for(let i=0;i<230;i++){const a=rnd()*7,rr=Math.sqrt(rnd())*BR*.97,px=CX+Math.cos(a)*rr,py=CY+Math.sin(a)*rr;
+  const r=2+rnd()*13; x.globalAlpha=.16+rnd()*.3;
+  const g=x.createRadialGradient(px-r*.3,py-r*.35,0,px,py,r);
+  g.addColorStop(0,'#FFE9A8'); g.addColorStop(.6,'rgba(226,170,60,.6)'); g.addColorStop(1,'rgba(150,90,20,0)');
+  x.fillStyle=g; x.beginPath(); x.arc(px,py,r,0,7); x.fill();}
+x.globalAlpha=1;
+
+/* surface sheen */
+const sh=x.createLinearGradient(CX-BR,CY-BR,CX+BR*.4,CY+BR);
+sh.addColorStop(0,'rgba(255,240,205,.20)'); sh.addColorStop(.4,'rgba(255,240,205,0)');
+x.fillStyle=sh; x.fillRect(CX-BR,CY-BR,BR*2,BR*2);
+x.restore();
+
+/* rim highlight */
+x.strokeStyle='rgba(255,255,255,.55)'; x.lineWidth=3;
+x.beginPath(); x.arc(CX,CY,R-1.5,Math.PI*1.06,Math.PI*1.75); x.stroke();
+
+/* steam */
+for(let i=0;i<26;i++){const px=CX+(rnd()-.5)*BR*1.2, py=CY-BR*.2-rnd()*BR*1.0, r=34+rnd()*90;
+  const g=x.createRadialGradient(px,py,0,px,py,r);
+  g.addColorStop(0,'rgba(255,252,244,'+(.05+rnd()*.07).toFixed(3)+')'); g.addColorStop(1,'rgba(255,252,244,0)');
+  x.fillStyle=g; x.beginPath(); x.arc(px,py,r,0,7); x.fill();}
+
+/* vignette + grain */
+const vg=x.createRadialGradient(CX,CY,R*.6,CX,CY,W*.75);
+vg.addColorStop(0,'rgba(0,0,0,0)'); vg.addColorStop(1,'rgba(0,0,0,.78)');
+x.fillStyle=vg; x.fillRect(0,0,W,H);
+const gi=x.getImageData(0,0,W,H), gd=gi.data;
+for(let i=0;i<gd.length;i+=4){const n=(rnd()-.5)*17; gd[i]+=n; gd[i+1]+=n; gd[i+2]+=n;}
+x.putImageData(gi,0,0);
+document.title='done';
+</script>

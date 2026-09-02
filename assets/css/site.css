@@ -7,36 +7,37 @@
    ============================================================ */
 
 :root {
-  /* Ground: greens biased warm so they never read as slate. */
-  --jade-900: #08201A;
-  --jade-800: #0E2A20;
-  --jade-700: #14382B;
-  --jade-600: #1B4736;
-  --jade-500: #2E7355;
-  --jade-300: #7FC5A0;
-  --jade-200: #A9DCC0;
+  /* Vietnamese lacquer: oxblood red and gold leaf. The reds carry a
+     warm brown bias so they read as lacquered wood, not fire-engine. */
+  --jade-900: #24080A;
+  --jade-800: #3D0D11;
+  --jade-700: #571318;
+  --jade-600: #74191E;
+  --jade-500: #96262A;
+  --jade-300: #E8B776;
+  --jade-200: #F6DCAC;
 
-  --bone:     #F2EDE1;
-  --bone-2:   #E8E1D1;
-  --bone-3:   #DCD3BF;
+  --bone:     #F7F1E3;
+  --bone-2:   #EDE4CF;
+  --bone-3:   #E0D4B8;
 
-  --chilli:   #E04E2E;
-  --chilli-d: #B93C21;
-  --chilli-ink: #9E2F16;   /* prices on light grounds, AA at small sizes */
-  --chilli-btn: #C43D20;   /* brightest red that clears AA for button text */
-  --gold:     #E0B45C;
+  --chilli:   #C8342C;
+  --chilli-d: #A02420;
+  --chilli-ink: #8C1D21;   /* prices on light grounds, AA at small sizes */
+  --chilli-btn: #E3B85C;   /* brightest red that clears AA for button text */
+  --gold:     #E9C173;
 
-  --ink:      #101A15;
-  --text:     #16241D;
-  --text-2:   #48584F;
-  --text-3:   #6E7C73;
+  --ink:      #1A0708;
+  --text:     #241012;
+  --text-2:   #5A4340;
+  --text-3:   #8A6F69;
 
-  --on-jade:   #F4F1E6;
-  --on-jade-2: rgba(244, 241, 230, 0.74);
-  --on-jade-3: rgba(244, 241, 230, 0.5);
-  --jade-line: rgba(168, 210, 186, 0.2);
-  --line:      rgba(22, 36, 29, 0.14);
-  --line-2:    rgba(22, 36, 29, 0.08);
+  --on-jade:   #F9F2E4;
+  --on-jade-2: rgba(249, 242, 228, 0.76);
+  --on-jade-3: rgba(249, 242, 228, 0.52);
+  --jade-line: rgba(233, 193, 115, 0.26);
+  --line:      rgba(36, 16, 18, 0.15);
+  --line-2:    rgba(36, 16, 18, 0.09);
 
   --display: "Newsreader", "Iowan Old Style", Georgia, "Times New Roman", serif;
   --sans: "Archivo", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
@@ -146,8 +147,8 @@ p:last-child { margin-bottom: 0; }
   transition: background-color 0.28s var(--ease), color 0.28s var(--ease),
               border-color 0.28s var(--ease), transform 0.28s var(--ease-out);
 }
-.btn--primary { background: var(--chilli-btn); color: #FFF6F1; }
-.btn--primary:hover { background: var(--chilli-ink); }
+.btn--primary { background: var(--chilli-btn); color: #2A0A0C; font-weight: 600; }
+.btn--primary:hover { background: var(--jade-200); }
 .btn--ghost { border-color: var(--line); color: var(--text); background: transparent; }
 .btn--ghost:hover { border-color: var(--text); background: var(--text); color: var(--bone); }
 .btn--sm { padding: 11px 19px; font-size: 11.5px; }
@@ -169,14 +170,14 @@ p:last-child { margin-bottom: 0; }
 .header {
   position: fixed; inset: 0 0 auto; z-index: 100;
   height: var(--header-h);
-  background: rgba(14, 42, 32, 0.82);
+  background: rgba(36, 8, 10, 0.86);
   backdrop-filter: saturate(150%) blur(14px);
   -webkit-backdrop-filter: saturate(150%) blur(14px);
-  border-bottom: 1px solid rgba(168, 210, 186, 0.14);
+  border-bottom: 1px solid rgba(233, 193, 115, 0.18);
   color: var(--on-jade);
   transition: background-color 0.3s var(--ease), border-color 0.3s var(--ease);
 }
-.header.is-solid { background: rgba(8, 32, 26, 0.95); }
+.header.is-solid { background: rgba(26, 6, 8, 0.96); }
 .header__inner {
   height: 100%; display: flex; align-items: center; gap: 26px;
   width: 100%; max-width: var(--shell); margin-inline: auto;
@@ -186,9 +187,10 @@ p:last-child { margin-bottom: 0; }
 .brand__mark {
   width: 36px; height: 36px; flex: none;
   display: grid; place-items: center;
-  border-radius: 50%; background: var(--chilli);
+  border-radius: 50%; background: var(--gold);
 }
 .brand__mark svg { width: 23px; height: 23px; }
+.brand__mark path[fill="#FAF6EE"] { fill: #2A0A0C; }
 .brand__text { display: flex; flex-direction: column; line-height: 1; }
 .brand__name { font-family: var(--display); font-size: 1.4rem; letter-spacing: -0.01em; }
 .brand__sub {
@@ -235,13 +237,13 @@ body.nav-open .nav-toggle span::after  { transform: translateY(0) rotate(-45deg)
   position: absolute; pointer-events: none;
   width: 92vmax; height: 92vmax; right: -30vmax; top: -34vmax;
   background: radial-gradient(circle at center,
-    rgba(46, 115, 85, 0.5) 0%, rgba(20, 56, 43, 0.34) 38%, transparent 68%);
+    rgba(233, 193, 115, 0.24) 0%, rgba(148, 38, 42, 0.30) 38%, transparent 68%);
 }
 .hero__glow--2 {
   right: auto; left: -32vmax; top: auto; bottom: -44vmax;
   width: 76vmax; height: 76vmax;
   background: radial-gradient(circle at center,
-    rgba(224, 78, 46, 0.16) 0%, transparent 62%);
+    rgba(233, 193, 115, 0.14) 0%, transparent 62%);
 }
 .hero__grain {
   position: absolute; inset: 0; pointer-events: none;
@@ -270,7 +272,7 @@ body.nav-open .nav-toggle span::after  { transform: translateY(0) rotate(-45deg)
   width: 7px; height: 7px; border-radius: 50%;
   background: var(--text-3); flex: none;
 }
-.hero__status.is-open .dot { background: var(--jade-300); box-shadow: 0 0 0 3px rgba(127, 197, 160, 0.2); }
+.hero__status.is-open .dot { background: var(--jade-300); box-shadow: 0 0 0 3px rgba(233, 193, 115, 0.22); }
 .hero h1 { color: var(--on-jade); }
 .hero__lede {
   color: var(--on-jade-2); max-width: 44ch;
@@ -336,7 +338,7 @@ body.nav-open .nav-toggle span::after  { transform: translateY(0) rotate(-45deg)
 
 /* ---------- Marquee ---------- */
 .marquee {
-  background: var(--chilli); color: #FFF4EF;
+  background: var(--gold); color: #2A0A0C;
   overflow: hidden; padding-block: 15px;
 }
 .marquee__track { display: flex; width: max-content; animation: slide 42s linear infinite; }
@@ -365,7 +367,7 @@ body.nav-open .nav-toggle span::after  { transform: translateY(0) rotate(-45deg)
   background: var(--jade-800); color: var(--on-jade);
   border-radius: var(--r-lg); padding: 20px 24px;
   display: flex; align-items: baseline; gap: 11px;
-  box-shadow: 0 22px 44px -24px rgba(8, 32, 26, 0.6);
+  box-shadow: 0 22px 44px -24px rgba(26, 6, 8, 0.62);
 }
 .story__badge strong {
   font-family: var(--display); font-size: 3.1rem; line-height: 1;
@@ -396,7 +398,7 @@ body.nav-open .nav-toggle span::after  { transform: translateY(0) rotate(-45deg)
   content: ""; position: absolute; pointer-events: none;
   width: 74vmax; height: 74vmax; left: 50%; top: -38vmax; transform: translateX(-50%);
   background: radial-gradient(circle at center,
-    rgba(46, 115, 85, 0.34) 0%, rgba(224, 78, 46, 0.07) 42%, transparent 70%);
+    rgba(233, 193, 115, 0.16) 0%, rgba(148, 38, 42, 0.22) 42%, transparent 70%);
 }
 .aromatics .shell { position: relative; z-index: 1; }
 .aromatics h2 { color: var(--on-jade); }
@@ -539,7 +541,7 @@ body.nav-open .nav-toggle span::after  { transform: translateY(0) rotate(-45deg)
   padding: 26px 16px 13px;
   font-family: var(--sans); font-size: 10.5px; font-weight: 500;
   letter-spacing: 0.1em; color: #F4F1E6;
-  background: linear-gradient(transparent, rgba(8, 32, 26, 0.86));
+  background: linear-gradient(transparent, rgba(26, 6, 8, 0.88));
 }
 
 /* ---------- Ordering ---------- */
@@ -622,27 +624,27 @@ body.nav-open .nav-toggle span::after  { transform: translateY(0) rotate(-45deg)
 .map-card__label {
   position: absolute; left: 0; right: 0; bottom: 0; padding: 22px 18px 15px;
   font-family: var(--sans); font-size: 11px; letter-spacing: 0.05em;
-  color: var(--on-jade); background: linear-gradient(transparent, rgba(8, 32, 26, 0.9));
+  color: var(--on-jade); background: linear-gradient(transparent, rgba(26, 6, 8, 0.92));
   display: flex; justify-content: space-between; align-items: flex-end; gap: 12px; flex-wrap: wrap;
 }
 .map-card__label a { color: var(--gold); }
 
 /* ---------- CTA band ---------- */
 .cta-band {
-  background: var(--chilli); color: #FFF4EF; text-align: center;
+  background: var(--jade-700); color: var(--on-jade); text-align: center;
   padding-block: clamp(66px, 9vw, 122px);
 }
-.cta-band h2 { color: #FFF4EF; }
+.cta-band h2 { color: var(--gold); }
 .cta-band h2 em { color: #FFD9CB; }
 .cta-band p {
-  color: rgba(255, 244, 239, 0.86); max-width: 44ch;
+  color: var(--on-jade-2); max-width: 44ch;
   margin: 22px auto 34px; font-size: 1.05rem;
 }
 .cta-band .btns { justify-content: center; }
-.cta-band .btn--primary { background: #FFF4EF; color: var(--chilli-d); }
-.cta-band .btn--primary:hover { background: #FFFFFF; }
-.cta-band .btn--ghost { border-color: rgba(255, 244, 239, 0.5); color: #FFF4EF; }
-.cta-band .btn--ghost:hover { background: #FFF4EF; color: var(--chilli-d); border-color: #FFF4EF; }
+.cta-band .btn--primary { background: var(--gold); color: #2A0A0C; }
+.cta-band .btn--primary:hover { background: var(--jade-200); }
+.cta-band .btn--ghost { border-color: var(--jade-line); color: var(--on-jade); }
+.cta-band .btn--ghost:hover { background: var(--on-jade); color: var(--jade-800); border-color: var(--on-jade); }
 
 /* ---------- Footer ---------- */
 .footer { background: var(--jade-900); color: var(--on-jade); padding-block: clamp(52px, 6vw, 82px) 34px; }
@@ -918,8 +920,8 @@ body.nav-open .nav-toggle span::after  { transform: translateY(0) rotate(-45deg)
 
 /* --- The open/closed dot is a live reading, so it breathes. --- */
 @keyframes live {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(127, 197, 160, 0.45); }
-  70%      { box-shadow: 0 0 0 7px rgba(127, 197, 160, 0); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(233, 193, 115, 0.5); }
+  70%      { box-shadow: 0 0 0 7px rgba(233, 193, 115, 0); }
 }
 .hero__status.is-open .dot { animation: live 2.6s ease-out infinite; }
 
@@ -940,7 +942,7 @@ img[data-loading] { opacity: 0; transform: scale(1.03); }
 
 /* --- Search field and chips acknowledge the press. --- */
 .menu-search input { transition: border-color 0.24s var(--ease), box-shadow 0.24s var(--ease); }
-.menu-search input:focus { box-shadow: 0 0 0 4px rgba(46, 115, 85, 0.14); }
+.menu-search input:focus { box-shadow: 0 0 0 4px rgba(148, 38, 42, 0.16); }
 .chip { transition: background-color 0.24s var(--ease), color 0.24s var(--ease),
                     border-color 0.24s var(--ease), transform 0.16s var(--ease-out); }
 .chip:active { transform: scale(0.96); }

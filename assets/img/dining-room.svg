@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" role="img" aria-label="Illustration of the Jenni Pho dining room with pendant lights and an open kitchen window">
   <defs>
     <linearGradient id="p9" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#14382B"/><stop offset="1" stop-color="#08201A"/>
+      <stop offset="0" stop-color="#571318"/><stop offset="1" stop-color="#24080A"/>
     </linearGradient>
     <radialGradient id="lamp" cx="50%" cy="0%" r="70%">
       <stop offset="0" stop-color="#DFA13B" stop-opacity=".5"/><stop offset="1" stop-color="#DFA13B" stop-opacity="0"/>
@@ -21,8 +21,8 @@
   <ellipse cx="450" cy="176" rx="120" ry="150" fill="url(#lamp)"/>
 
   <!-- open kitchen window -->
-  <rect x="70" y="248" width="460" height="140" rx="10" fill="#0E2A20" stroke="#3E342B" stroke-width="4"/>
-  <rect x="90" y="268" width="420" height="100" rx="6" fill="#173C2E"/>
+  <rect x="70" y="248" width="460" height="140" rx="10" fill="#3D0D11" stroke="#3E342B" stroke-width="4"/>
+  <rect x="90" y="268" width="420" height="100" rx="6" fill="#6B1419"/>
   <g fill="#DFA13B" opacity=".55">
     <rect x="120" y="300" width="70" height="10" rx="5"/>
     <rect x="220" y="318" width="90" height="10" rx="5"/>
@@ -55,8 +55,8 @@
   </g>
 
   <!-- floor -->
-  <rect y="606" width="600" height="194" fill="#0A241D"/>
-  <g stroke="#14382B" stroke-width="3">
+  <rect y="606" width="600" height="194" fill="#2A0A0C"/>
+  <g stroke="#571318" stroke-width="3">
     <path d="M0 650h600"/><path d="M0 700h600"/><path d="M0 750h600"/>
   </g>
 </svg>
