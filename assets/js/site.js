@@ -55,11 +55,6 @@
     '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">' +
     '<path d="m12 2 2.9 6.26 6.85.72-5.11 4.6 1.44 6.72L12 16.9l-6.08 3.4 1.44-6.72-5.11-4.6 6.85-.72z"/></svg>';
 
-  const ARROW =
-    '<svg class="arw" width="15" height="15" viewBox="0 0 24 24" fill="none" ' +
-    'stroke="currentColor" stroke-width="2" stroke-linecap="round" ' +
-    'stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
-
   /* ---------------- Hours / open-now ---------------- */
   const DAY_KEYS  = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
   const DAY_NAMES = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -197,10 +192,7 @@
         `style="--accent:${p.accent}">` +
         `<span class="partner__dot"></span>` +
         `<span class="partner__text"><span class="partner__name">${esc(p.name)}</span>` +
-        `<span class="partner__note">${esc(p.note)}</span></span>` +
-        `<svg class="partner__arw" width="15" height="15" viewBox="0 0 24 24" fill="none" ` +
-        `stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ` +
-        `aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>`
+        `<span class="partner__note">${esc(p.note)}</span></span></a>`
     ).join("");
   }
 
@@ -216,11 +208,9 @@
           STAR.repeat(r.rating) + `</div>`
         : "";
 
-      const meta = [r.date, r.context].filter(Boolean).map(esc).join(" &middot; ");
-
       const src = r.url
-        ? `<a href="${r.url}" target="_blank" rel="noopener noreferrer">${esc(r.source)} review</a>`
-        : `<span>${esc(r.source)} review</span>`;
+        ? `<a href="${r.url}" target="_blank" rel="noopener noreferrer">Read on ${esc(r.source)}</a>`
+        : `<span>${esc(r.source)}</span>`;
 
       return (
         `<article class="review">` +
@@ -237,7 +227,8 @@
           `<h3 class="review__title">&ldquo;${esc(r.headline)}&rdquo;</h3>` +
           `<blockquote class="review__quote">${esc(r.quote)}</blockquote>` +
           `<footer class="review__foot">` +
-            src + (meta ? `<span class="review__meta">${meta}</span>` : "") +
+            (r.visit ? `<span class="review__meta">${esc(r.visit)}</span>` : "") +
+            src +
           `</footer>` +
         `</article>`
       );

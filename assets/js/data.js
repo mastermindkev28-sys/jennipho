@@ -249,7 +249,7 @@ const MENU = [
 /* ------------------------------------------------------------------
    REVIEWS
    Real, published Google reviews. Each card shows the reviewer's name,
-   their Google Local Guide credential and their visit context, because
+   their Google Local Guide credential and when they came, because
    that is verifiable and more persuasive than an anonymous star row.
 
    `headline` is always a verbatim fragment of that same review - never
@@ -267,9 +267,8 @@ const REVIEWS_URL =
 const REVIEWS = [
   {
     author: "BJ the Space Hunter",
-    credential: "Local Guide \u00b7 97 reviews \u00b7 905 photos",
-    date: "8 months ago",
-    context: "Dine in",
+    credential: "Local Guide, 97 reviews",
+    visit: "Dined in, 8 months ago",
     source: "Google",
     headline: "Best Pho in the Southwest area!",
     quote:
@@ -278,9 +277,8 @@ const REVIEWS = [
   },
   {
     author: "Christina Marie",
-    credential: "Local Guide \u00b7 267 reviews \u00b7 421 photos",
-    date: "a year ago",
-    context: "Dine in \u00b7 Lunch \u00b7 $10\u201320",
+    credential: "Local Guide, 267 reviews",
+    visit: "Dined in for lunch, a year ago",
     source: "Google",
     headline: "One of the best Pho restaurants in town",
     quote:
@@ -289,9 +287,8 @@ const REVIEWS = [
   },
   {
     author: "Eddie Lluisma",
-    credential: "Local Guide \u00b7 449 reviews \u00b7 2,528 photos",
-    date: "4 months ago",
-    context: "Dine in \u00b7 Dinner \u00b7 $10\u201320",
+    credential: "Local Guide, 449 reviews",
+    visit: "Dined in for dinner, 4 months ago",
     source: "Google",
     headline: "A very nostalgic taste",
     quote:
@@ -300,9 +297,8 @@ const REVIEWS = [
   },
   {
     author: "Michelle G",
-    credential: "Local Guide \u00b7 392 reviews \u00b7 297 photos",
-    date: "4 months ago",
-    context: "Dine in \u00b7 Lunch \u00b7 $10\u201320",
+    credential: "Local Guide, 392 reviews",
+    visit: "Dined in for lunch, 4 months ago",
     source: "Google",
     headline: "The pho was flavorful",
     quote:
@@ -312,8 +308,7 @@ const REVIEWS = [
   {
     author: "Anissa Bounaouar",
     credential: "4 reviews",
-    date: "a month ago",
-    context: "Dine in \u00b7 $10\u201320",
+    visit: "Dined in, a month ago",
     source: "Google",
     headline: "The food is always incredible",
     quote:
@@ -322,9 +317,8 @@ const REVIEWS = [
   },
   {
     author: "Mama Mia",
-    credential: "Local Guide \u00b7 25 reviews \u00b7 19 photos",
-    date: "9 months ago",
-    context: "Lunch \u00b7 $20\u201330",
+    credential: "Local Guide, 25 reviews",
+    visit: "Came for lunch, 9 months ago",
     source: "Google",
     headline: "Worth the extra drive",
     quote:

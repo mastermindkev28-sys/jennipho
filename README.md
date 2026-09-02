@@ -39,6 +39,25 @@ Text meets WCAG AA. Two colours are deliberately darker than they look like
 they should be: `--chilli-ink` for prices and `--chilli-btn` for button
 labels. The brighter chilli fails AA at the small sizes those use.
 
+### Deliberate omissions
+
+Several things are missing on purpose, because they are the common tells of a
+generated page rather than choices made for a restaurant:
+
+- **No eyebrow labels.** Sections are not introduced by a tracked-out all-caps
+  word. The headings say what the section is.
+- **No accented word in a headline.** Headlines are one voice, one colour.
+- **No arrows appended to link text.** A link already looks like a link.
+- **No dot-joined meta strings.** "Local Guide, 267 reviews" and "Dined in for
+  lunch, a year ago" instead of `A · B · C`.
+- **No all-caps anywhere**, and monospace only where the data is genuinely
+  tabular: dish codes, prices, and the hours column.
+- **One motion moment.** The hero settles in on load and the steam drifts.
+  Nothing fades up on scroll, and cards do not lift on hover. Hover states are
+  reserved for things that are actually links.
+
+If you add a section, match this. The restraint is the design.
+
 ### Fonts
 
 The three families are **self-hosted** in `assets/fonts/`, not loaded from
