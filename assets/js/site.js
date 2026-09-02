@@ -358,8 +358,8 @@
           `<div class="menu-cat__art">${media(cat.art, cat.art, cat.name)}</div>` +
           `</div>` +
           `<ul class="menu-list">` +
-          items.map((it) =>
-            `<li class="menu-row">` +
+          items.map((it, i) =>
+            `<li class="menu-row" style="--i:${Math.min(i, 14)}">` +
             `<span class="menu-row__code">${esc(it.code || "")}</span>` +
             `<div class="menu-row__main">` +
             `<div class="menu-row__top">` +
@@ -388,6 +388,7 @@
           shown === total ? `${total} dishes` : `${shown} of ${total} dishes`;
       }
       initReveal();
+      initMotion();
     },
 
     bind() {
@@ -627,6 +628,73 @@
     io.observe(el);
   }
 
+  /* Storefront photo, drawn only once that slot is filled in. An empty
+     assets/photos/ should not leave a broken frame or a 404 behind. */
+  function renderStorefront() {
+    const host = $("[data-storefront]");
+    if (!host) return;
+    const photo = typeof PHOTOS === "object" && PHOTOS && PHOTOS["storefront"];
+    if (!photo) { host.remove(); return; }
+    host.className = "storefront";
+    host.innerHTML =
+      `<img src="assets/photos/${photo}" alt="Jenni Ph\u1edf on South Rainbow Boulevard" ` +
+      `loading="lazy" decoding="async">` +
+      `<figcaption>Look for the sign on South Rainbow.</figcaption>`;
+  }
+
+  /* ---------------- Motion ----------------
+     Wires up the three motion behaviours: headings wipe up when they
+     are first seen, grids arrive one item after another, and real
+     photographs settle in when they decode. All of it is skipped
+     outright when the visitor asks for reduced motion, so nothing is
+     left mid-transition and hidden. */
+  function initMotion() {
+    const calm = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (calm.matches || !("IntersectionObserver" in window)) return;
+
+    const seen = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (!e.isIntersecting) return;
+        e.target.classList.add("is-in");
+        seen.unobserve(e.target);
+      });
+    }, { threshold: 0.15, rootMargin: "0px 0px -8% 0px" });
+
+    // Headings wipe up from their own baseline. The heading is what gets
+    // observed, never the clipped span: a clip-path that hides the span
+    // also drives its intersectionRatio to zero, so observing the span
+    // means the threshold can never be met and the text stays hidden
+    // for good.
+    $$(".section-head h2, .reviews__top h2").forEach((h) => {
+      if (h.querySelector(".reveal-wipe")) return;
+      const span = document.createElement("span");
+      span.className = "reveal-wipe";
+      while (h.firstChild) span.appendChild(h.firstChild);
+      h.appendChild(span);
+      seen.observe(h);
+    });
+
+    // Grids arrive in sequence. Each child carries its own index so the
+    // delay is CSS's problem, not a pile of timers.
+    $$(".sig-grid, .review-grid, .spice-row, .partners, .gallery, .overnight")
+      .forEach((grid) => {
+        grid.classList.add("stagger");
+        Array.from(grid.children).forEach((c, i) =>
+          c.style.setProperty("--i", Math.min(i, 8))
+        );
+        seen.observe(grid);
+      });
+
+    // Photographs fade in rather than snapping, once they actually decode.
+    $$("img").forEach((img) => {
+      if (img.complete && img.naturalWidth) return;
+      img.setAttribute("data-loading", "");
+      const done = () => img.removeAttribute("data-loading");
+      img.addEventListener("load", done, { once: true });
+      img.addEventListener("error", done, { once: true });
+    });
+  }
+
   /* ---------------- Boot ---------------- */
   function boot() {
     fillBusiness();
@@ -641,8 +709,10 @@
     renderOrdering();
     MenuPage.init();
     initReveal();
+    renderStorefront();
     initSteam();
     initCountUp();
+    initMotion();
     setInterval(renderStatus, 60000);
   }
 

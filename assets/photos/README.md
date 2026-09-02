@@ -4,6 +4,25 @@ The site ships with hand-drawn illustrations, so it never renders blank or
 broken. Real photography will make it considerably better. Here is how to
 swap it in.
 
+## The five photos you already have
+
+Save each one into this folder under the name on the right, then delete the
+`//` in front of that line in the `PHOTOS` block of `assets/js/data.js`.
+
+| Your photo | Save it as | Where it appears |
+|---|---|---|
+| The wide shot of the bowl with the herb plate beside it on the wood table | `hero.jpg` | Homepage hero. Crop it square. |
+| That same shot, uncropped | `pho-bowl.jpg` | Gallery and the top of the Pho menu |
+| The close-up of the bowl | `pho-bowl.jpg` | Use whichever of the two reads better small |
+| The dining room with the rattan pendant lights | `dining-room.jpg` | Our story. Crop to portrait. |
+| The grilled pork over vermicelli | `vermicelli.jpg` | Gallery and the Vermicelli menu section |
+| The storefront with the sign | `storefront.jpg` | Visit, directly above the map |
+
+The wide bowl shot is the strongest of the five and should be the hero. It
+shows the herb plate served on the side, which is the detail the copy already
+talks about, and the light on the broth is doing the work a hero photo needs
+to do.
+
 ## How to add a photo
 
 1. Save the file into this folder (`assets/photos/`) using the filename below.

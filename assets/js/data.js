@@ -339,15 +339,34 @@ const REVIEWS = [
    needs to change. See assets/photos/README.md for sizes.
    ------------------------------------------------------------------ */
 const PHOTOS = {
-  // "hero":         "hero.jpg",          // 1200x1200, square, the money shot
-  // "dining-room":  "dining-room.jpg",   // 1000x1250, portrait
+  /* ----------------------------------------------------------------
+     YOUR PHOTOS GO HERE. Two steps, no other file to touch:
+
+       1. Save the file into assets/photos/ using the name below.
+       2. Delete the // in front of that line.
+
+     Save the five you already have like this:
+
+       the big bowl with the herb plate on the wood table -> hero.jpg
+                                            and again as -> pho-bowl.jpg
+       the close-up bowl                                 -> pho-bowl.jpg
+       the dining room with the rattan lights            -> dining-room.jpg
+       the grilled pork over vermicelli                  -> vermicelli.jpg
+       the storefront with the sign                      -> storefront.jpg
+
+     Lines left commented keep using the illustration, so photos can go
+     in one at a time and the site is never broken or missing anything.
+     ---------------------------------------------------------------- */
+  // "hero":         "hero.jpg",          // 1200x1200 square
   // "pho-bowl":     "pho-bowl.jpg",      // 1600x1000
+  // "dining-room":  "dining-room.jpg",   // 1000x1250 portrait
+  // "vermicelli":   "vermicelli.jpg",    // 1000x800
+  // "storefront":   "storefront.jpg",    // 1600x1000, shows in Visit
   // "banh-mi":      "banh-mi.jpg",       // 1000x800
   // "spring-rolls": "spring-rolls.jpg",  // 1000x800
   // "rice-plate":   "rice-plate.jpg",    // 1000x800
   // "drinks":       "drinks.jpg",        // 1000x800
   // "bun-bo-hue":   "bun-bo-hue.jpg",    // 1600x1000
-  // "vermicelli":   "vermicelli.jpg",    // 1000x800
 };
 
 /* Gallery tiles. Each looks for a real photo first and falls back to
