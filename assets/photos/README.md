@@ -4,6 +4,22 @@ The site ships with hand-drawn illustrations, so it never renders blank or
 broken. Real photography will make it considerably better. Here is how to
 swap it in.
 
+## Fastest way to get your photos in
+
+Open this link, drag the files in, commit:
+
+  https://github.com/mastermindkev28-sys/jennipho/upload/claude/jenni-pho-website-gm03i5/assets/photos
+
+Then run one command from the repo root:
+
+```sh
+python3 tools/use-photos.py
+```
+
+That scans this folder and switches on every slot whose file is present,
+leaving the rest on their illustrations. It handles `.jpg`, `.jpeg`, `.png`
+and `.webp`, so the extension does not matter. Nothing else needs editing.
+
 ## The five photos you already have
 
 Save each one into this folder under the name on the right, then delete the
