@@ -50,10 +50,10 @@ site_js    = read("assets/js/site.js")
 
 # ---- 1. SVG illustrations -> data URIs -------------------------------
 art = {}
-for f in sorted(glob.glob("assets/img/*.svg")):
+for f in sorted(glob.glob("assets/img/*.jpg")):
     key = os.path.splitext(os.path.basename(f))[0]
     b64 = base64.b64encode(io.open(f, "rb").read()).decode("ascii")
-    art[key] = "data:image/svg+xml;base64," + b64
+    art[key] = "data:image/jpeg;base64," + b64
 print("inlined %d illustrations" % len(art))
 
 art_js = "window.ART_DATA = {\n" + "".join(
@@ -61,7 +61,7 @@ art_js = "window.ART_DATA = {\n" + "".join(
 ) + "};"
 
 # site.js builds its <img> src from a relative path; point it at the map.
-old_src = 'const art_src = `assets/img/${art}.svg`;'
+old_src = 'const art_src = `assets/img/${art}.jpg`;'
 assert old_src in site_js, "media() art_src line not found"
 site_js = site_js.replace(
     old_src,
@@ -106,8 +106,8 @@ stray = [m.group(0) for m in re.finditer(r'href="[^"]*menu\.html[^"]*"', body)]
 assert not stray, "unrewritten cross-page links: %r" % stray
 
 # ---- 4. inline the hand-written <img> sources ------------------------
-for key in ("pho-bowl", "dining-room"):
-    body = body.replace('src="assets/img/%s.svg"' % key, 'src="%s"' % art[key])
+for key in ("hero", "dining-room"):
+    body = body.replace('src="assets/img/%s.jpg"' % key, 'src="%s"' % art[key])
 assert "assets/img" not in body, "stray asset path in markup"
 
 # ---- 5. strip external <script src> tags (inlined below) -------------

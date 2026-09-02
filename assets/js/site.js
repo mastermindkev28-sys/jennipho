@@ -26,7 +26,7 @@
   }
 
   function media(art, slot, alt, cls) {
-    const art_src = `assets/img/${art}.svg`;
+    const art_src = `assets/img/${art}.jpg`;
     const photo = photoFor(slot);
     const src = photo ? `assets/photos/${photo}` : art_src;
     // The illustrations are a couple of KB each. Lazy-loading them only
@@ -634,10 +634,12 @@
     const host = $("[data-storefront]");
     if (!host) return;
     const photo = typeof PHOTOS === "object" && PHOTOS && PHOTOS["storefront"];
-    if (!photo) { host.remove(); return; }
+    const src = photo
+      ? `assets/photos/${photo}`
+      : ((window.ART_DATA && window.ART_DATA["storefront"]) || "assets/img/storefront.jpg");
     host.className = "storefront";
     host.innerHTML =
-      `<img src="assets/photos/${photo}" alt="Jenni Ph\u1edf on South Rainbow Boulevard" ` +
+      `<img src="${src}" alt="Jenni Ph\u1edf on South Rainbow Boulevard" ` +
       `loading="lazy" decoding="async">` +
       `<figcaption>Look for the sign on South Rainbow.</figcaption>`;
   }
